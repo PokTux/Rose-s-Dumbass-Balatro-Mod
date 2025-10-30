@@ -12,7 +12,8 @@ SMODS.Joker{ --Somni House
         ['text'] = {
             [1] = 'If scored cards contain three {C:attention}Jacks{}',
             [2] = 'and two {C:attention}Queens {}retrigger all scored',
-            [3] = 'cards once'
+            [3] = 'cards once',
+            [4] = '{C:inactive}(this idea came to me in a dream){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'

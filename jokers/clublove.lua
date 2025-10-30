@@ -3,14 +3,14 @@ SMODS.Joker{ --Auspisticism
     config = {
         extra = {
             at3c = 0,
-            repetitions = 2
+            rt = 2
         }
     },
     loc_txt = {
         ['name'] = 'Auspisticism',
         ['text'] = {
             [1] = 'If played hand contains {C:attention}exactly three{} {C:clubs}Club{} cards',
-            [2] = 'retrigger the {C:attention}first {}and {C:attention}last {}scored cards {C:attention}2{}',
+            [2] = 'retrigger the {C:attention}first {}and {C:attention}last {}scored cards {C:attention}#2#{}',
             [3] = 'additional times'
         },
         ['unlock'] = {
@@ -34,6 +34,11 @@ SMODS.Joker{ --Auspisticism
     discovered = true,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_tlove"] = true, ["rosemod2_rosemod2_toby"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.at3c, card.ability.extra.rt}}
+    end,
 
     
     calculate = function(self, card, context)
@@ -59,7 +64,7 @@ SMODS.Joker{ --Auspisticism
                 if context.repetition and context.cardarea == G.play  then
                     if ((context.other_card == context.scoring_hand[1] or context.other_card == context.scoring_hand[#context.scoring_hand]) and (card.ability.extra.at3c or 0) == 1) then
                         return {
-                            repetitions = card.ability.extra.repetitions,
+                            repetitions = card.ability.extra.rt,
                             message = "c8<"
                         }
                     end

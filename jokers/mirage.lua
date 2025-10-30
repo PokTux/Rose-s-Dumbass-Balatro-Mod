@@ -19,7 +19,7 @@ SMODS.Joker{ --Mirage
     },
     pos = {
         x = 6,
-        y = 3
+        y = 4
     },
     display_size = {
         w = 71 * 1, 
@@ -36,7 +36,7 @@ SMODS.Joker{ --Mirage
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
         x = 7,
-        y = 3
+        y = 4
     },
     in_pool = function(self, args)
           return (

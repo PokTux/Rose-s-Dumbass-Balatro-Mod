@@ -2,8 +2,8 @@ SMODS.Joker{ --2012 Ford Mustang
     key = "mustang",
     config = {
         extra = {
+            ch = 250,
             odds = 5,
-            chips = 250,
             rosemod2_crash = 0,
             no = 0,
             var1 = 0
@@ -12,8 +12,8 @@ SMODS.Joker{ --2012 Ford Mustang
     loc_txt = {
         ['name'] = '2012 Ford Mustang',
         ['text'] = {
-            [1] = '{C:chips}+250{} Chips',
-            [2] = '{C:green}#4# in #5#{} chance to {C:red}destroy{}',
+            [1] = '{C:chips}+#1#{} Chips',
+            [2] = '{C:green}#5# in #6#{} chance to {C:red}destroy{}',
             [3] = 'adjacent Jokers when first',
             [4] = 'hand of round is drawn'
         },
@@ -42,7 +42,7 @@ SMODS.Joker{ --2012 Ford Mustang
     loc_vars = function(self, info_queue, card)
         
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_rosemod2_mustang') 
-        return {vars = {card.ability.extra.no, card.ability.extra.rosemod2_crash, card.ability.extra.var1, new_numerator, new_denominator}}
+        return {vars = {card.ability.extra.ch, card.ability.extra.no, card.ability.extra.rosemod2_crash, card.ability.extra.var1, new_numerator, new_denominator}}
     end,
 
     
@@ -118,7 +118,7 @@ SMODS.Joker{ --2012 Ford Mustang
                             end
                             if context.cardarea == G.jokers and context.joker_main  then
                                 return {
-                                    chips = card.ability.extra.chips
+                                    chips = card.ability.extra.ch
                                 }
                             end
                         end

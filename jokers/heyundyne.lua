@@ -2,13 +2,13 @@ SMODS.Joker{ --Hey Undyne
     key = "heyundyne",
     config = {
         extra = {
-            Xmult = 7
+            HEYUNDYNEHOWMANYHUMANSOULS = 7
         }
     },
     loc_txt = {
         ['name'] = 'Hey Undyne',
         ['text'] = {
-            [1] = '{X:mult,C:white}X7{} Mult if scored hand contains',
+            [1] = '{X:mult,C:white}X#1#{} Mult if scored hand contains',
             [2] = 'a {C:attention}Five of a Kind{} of {C:attention}7s{}'
         },
         ['unlock'] = {
@@ -33,6 +33,11 @@ SMODS.Joker{ --Hey Undyne
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_rosemod2_toby"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.HEYUNDYNEHOWMANYHUMANSOULS}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
@@ -47,7 +52,7 @@ SMODS.Joker{ --Hey Undyne
                 return rankCount >= 5
                 end)() then
                     return {
-                        Xmult = card.ability.extra.Xmult
+                        Xmult = card.ability.extra.HEYUNDYNEHOWMANYHUMANSOULS
                     }
                 end
             end

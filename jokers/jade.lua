@@ -24,7 +24,7 @@ SMODS.Joker{ --Jade
     },
     pos = {
         x = 8,
-        y = 3
+        y = 4
     },
     display_size = {
         w = 71 * 1, 
@@ -41,7 +41,7 @@ SMODS.Joker{ --Jade
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
         x = 9,
-        y = 3
+        y = 4
     },
     in_pool = function(self, args)
           return (

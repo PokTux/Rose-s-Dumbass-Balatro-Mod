@@ -60,7 +60,7 @@ local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 
-local jokerIndexList = {42,3,32,15,5,7,23,9,40,38,25,2,22,24,35,8,21,30,10,27,1,29,6,19,16,4,36,41,18,11,17,37,34,28,33,26,20,31,39,14,13,12}
+local jokerIndexList = {51,4,38,16,7,9,26,21,34,47,29,3,24,28,43,50,23,36,10,32,1,35,8,20,17,6,44,49,19,11,18,45,40,33,2,31,5,46,15,42,41,13,12,30,22,37,48,14,27,39,25}
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -75,7 +75,7 @@ local function load_jokers_folder()
 end
 
 
-local consumableIndexList = {2,1}
+local consumableIndexList = {1,2}
 
 local function load_consumables_folder()
     local mod_path = SMODS.current_mod.path
@@ -116,7 +116,7 @@ local function load_seals_folder()
 end
 
 
-local deckIndexList = {2,1}
+local deckIndexList = {3,2,1}
 
 local function load_decks_folder()
     local mod_path = SMODS.current_mod.path
@@ -167,37 +167,63 @@ SMODS.ObjectType({
     key = "rosemod2_rosemod2_jokers",
     cards = {
         ["j_rosemod2_aigeneratedcakerecipe"] = true,
+        ["j_rosemod2_arachnidjoker"] = true,
         ["j_rosemod2_asuggestion"] = true,
+        ["j_rosemod2_carpet"] = true,
         ["j_rosemod2_clownmaskedculprits"] = true,
         ["j_rosemod2_clublove"] = true,
         ["j_rosemod2_deltarunetomorrow"] = true,
         ["j_rosemod2_diamondlove"] = true,
-        ["j_rosemod2_elgatobalatro"] = true,
-        ["j_rosemod2_extrudejoker"] = true,
         ["j_rosemod2_fatasstetoplush"] = true,
         ["j_rosemod2_fujoker"] = true,
+        ["j_rosemod2_gummyshark"] = true,
         ["j_rosemod2_heartlove"] = true,
         ["j_rosemod2_heyundyne"] = true,
         ["j_rosemod2_himejoker"] = true,
         ["j_rosemod2_homophobicdog"] = true,
         ["j_rosemod2_imperialcutter"] = true,
+        ["j_rosemod2_invisiblejokercopy"] = true,
         ["j_rosemod2_joakerofpuredark"] = true,
         ["j_rosemod2_jokaro"] = true,
         ["j_rosemod2_lakoncockpit"] = true,
         ["j_rosemod2_magichat"] = true,
         ["j_rosemod2_mementomori"] = true,
+        ["j_rosemod2_moddedcopyofterraria"] = true,
         ["j_rosemod2_mrgreen"] = true,
         ["j_rosemod2_mustang"] = true,
+        ["j_rosemod2_photograph"] = true,
         ["j_rosemod2_rbalatro"] = true,
         ["j_rosemod2_somnihouse"] = true,
         ["j_rosemod2_spadelove"] = true,
         ["j_rosemod2_temporaljoker"] = true,
+        ["j_rosemod2_thechair"] = true,
+        ["j_rosemod2_thejokerisyou"] = true,
         ["j_rosemod2_thisisstupid"] = true,
         ["j_rosemod2_thisjokercandoanything"] = true,
         ["j_rosemod2_thisjokerisalreadyhere"] = true,
+        ["j_rosemod2_token"] = true,
         ["j_rosemod2_triplejokers"] = true,
-        ["j_rosemod2_video"] = true,
-        ["j_rosemod2_vivrusty"] = true
+        ["j_rosemod2_vivrusty"] = true,
+        ["j_rosemod2_yorickcopy"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "rosemod2_rosemod2_toby",
+    cards = {
+        ["j_rosemod2_arachnidjoker"] = true,
+        ["j_rosemod2_carpet"] = true,
+        ["j_rosemod2_clublove"] = true,
+        ["j_rosemod2_deltarunetomorrow"] = true,
+        ["j_rosemod2_diamondlove"] = true,
+        ["j_rosemod2_heartlove"] = true,
+        ["j_rosemod2_heyundyne"] = true,
+        ["j_rosemod2_joakerofpuredark"] = true,
+        ["j_rosemod2_spadelove"] = true,
+        ["j_rosemod2_temporaljoker"] = true,
+        ["j_rosemod2_thejokerisyou"] = true,
+        ["j_rosemod2_thisjokercandoanything"] = true,
+        ["j_rosemod2_thisjokerisalreadyhere"] = true
     },
 })
 
@@ -219,29 +245,14 @@ SMODS.ObjectType({
 })
 
 SMODS.ObjectType({
-    key = "rosemod2_rosemod2_toby",
-    cards = {
-        ["j_rosemod2_clublove"] = true,
-        ["j_rosemod2_deltarunetomorrow"] = true,
-        ["j_rosemod2_diamondlove"] = true,
-        ["j_rosemod2_heartlove"] = true,
-        ["j_rosemod2_heyundyne"] = true,
-        ["j_rosemod2_joakerofpuredark"] = true,
-        ["j_rosemod2_spadelove"] = true,
-        ["j_rosemod2_susie"] = true,
-        ["j_rosemod2_temporaljoker"] = true,
-        ["j_rosemod2_thisjokercandoanything"] = true,
-        ["j_rosemod2_thisjokerisalreadyhere"] = true
-    },
-})
-
-SMODS.ObjectType({
     key = "rosemod2_rosemod2_legendary",
     cards = {
         ["j_rosemod2_furinadefontaine"] = true,
         ["j_rosemod2_garymccready"] = true,
         ["j_rosemod2_grendel"] = true,
         ["j_rosemod2_jade"] = true,
+        ["j_rosemod2_knight"] = true,
+        ["j_rosemod2_lotus"] = true,
         ["j_rosemod2_mirage"] = true,
         ["j_rosemod2_sorren"] = true,
         ["j_rosemod2_susie"] = true,
@@ -254,6 +265,7 @@ SMODS.ObjectType({
     cards = {
         ["j_rosemod2_grendel"] = true,
         ["j_rosemod2_jade"] = true,
+        ["j_rosemod2_lotus"] = true,
         ["j_rosemod2_mirage"] = true,
         ["j_rosemod2_sorren"] = true,
         ["j_rosemod2_valkyr"] = true

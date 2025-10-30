@@ -1,14 +1,15 @@
-SMODS.Joker{ --r/balatro
-    key = "rbalatro",
+SMODS.Joker{ --The Chair
+    key = "thechair",
     config = {
         extra = {
-            xc = 1.5
+            chips = 15
         }
     },
     loc_txt = {
-        ['name'] = 'r/balatro',
+        ['name'] = 'The Chair',
         ['text'] = {
-            [1] = '{X:chips,C:white}X#1#{} Chips'
+            [1] = '{C:chips}+#1#{} Chips whenever',
+            [2] = 'another Joker is triggered'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -16,13 +17,13 @@ SMODS.Joker{ --r/balatro
     },
     pos = {
         x = 1,
-        y = 2
+        y = 4
     },
     display_size = {
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 6,
+    cost = 4,
     rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
@@ -34,14 +35,14 @@ SMODS.Joker{ --r/balatro
 
     loc_vars = function(self, info_queue, card)
         
-        return {vars = {card.ability.extra.xc}}
+        return {vars = {card.ability.extra.chips}}
     end,
 
     
     calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main  then
+        if context.other_joker  then
             return {
-                x_chips = card.ability.extra.xc
+                chips = card.ability.extra.chips
             }
         end
     end

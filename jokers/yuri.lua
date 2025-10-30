@@ -8,7 +8,8 @@ SMODS.Joker{ --The Gay Agenda
         ['name'] = 'The Gay Agenda',
         ['text'] = {
             [1] = 'Playing a hand that contains a',
-            [2] = '{C:attention}Straight {}will {C:red}crash the game{}'
+            [2] = '{C:attention}Straight {}will {C:red}crash the game{}',
+            [3] = '{C:inactive}This isn\'t really a Joker{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'

@@ -2,14 +2,14 @@ SMODS.Joker{ --Furina de Fontaine
     key = "furinadefontaine",
     config = {
         extra = {
-            Xmult = 3
+            xmult = 3
         }
     },
     loc_txt = {
         ['name'] = 'Furina de Fontaine',
         ['text'] = {
             [1] = 'Played Knaves each give',
-            [2] = '{X:mult,C:white}X3{} Mult when scored',
+            [2] = '{X:mult,C:white}X#1#{} Mult when scored',
             [3] = '',
             [4] = '{C:inactive}However these days,{}',
             [5] = '{C:inactive}they\'re called{} {C:attention}Jacks{}'
@@ -19,7 +19,7 @@ SMODS.Joker{ --Furina de Fontaine
         }
     },
     pos = {
-        x = 8,
+        x = 4,
         y = 4
     },
     display_size = {
@@ -36,7 +36,7 @@ SMODS.Joker{ --Furina de Fontaine
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 9,
+        x = 5,
         y = 4
     },
     in_pool = function(self, args)
@@ -48,12 +48,17 @@ SMODS.Joker{ --Furina de Fontaine
           and true
       end,
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xmult}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
             if context.other_card:get_id() == 11 then
                 return {
-                    Xmult = card.ability.extra.Xmult
+                    Xmult = card.ability.extra.xmult
                 }
             end
         end

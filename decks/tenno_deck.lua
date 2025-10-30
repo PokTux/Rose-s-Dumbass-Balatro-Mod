@@ -16,17 +16,17 @@ SMODS.Back {
     no_collection = false,
     atlas = 'CustomDecks',
      apply = function(self, back)
-            for i = 1, 1 do
             G.E_MANAGER:add_event(Event({
             func = function()
+            for i = 1, 1 do
   
             play_sound('timpani')
-            SMODS.add_card({ set = 'Spectral', key = 'c_rosemod2_dealwiththevoid'
+            SMODS.add_card({ set = 'Spectral', area = G.consumeables, key = 'c_rosemod2_dealwiththevoid'
              })
-            return true
+        end
+        return true
         end
         }))
-    end
             G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots - 1
     end
 }

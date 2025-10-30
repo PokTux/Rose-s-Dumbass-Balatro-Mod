@@ -2,14 +2,15 @@ SMODS.Joker{ --Fatass Teto Plush
     key = "fatasstetoplush",
     config = {
         extra = {
-            Xmult = 3.5
+            xm = 3.5,
+            sl = 1
         }
     },
     loc_txt = {
         ['name'] = 'Fatass Teto Plush',
         ['text'] = {
-            [1] = '{X:mult,C:white}X3.5{} Mult',
-            [2] = '{C:dark_edition}-1{} Joker Slot'
+            [1] = '{X:mult,C:white}X#1#{} Mult',
+            [2] = '{C:dark_edition}-#2#{} Joker Slot'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -33,20 +34,25 @@ SMODS.Joker{ --Fatass Teto Plush
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xm, card.ability.extra.sl}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-                Xmult = card.ability.extra.Xmult
+                Xmult = card.ability.extra.xm
             }
         end
     end,
 
     add_to_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = math.max(1, G.jokers.config.card_limit - 1)
+        G.jokers.config.card_limit = math.max(1, G.jokers.config.card_limit - card.ability.extra.sl)
     end,
 
     remove_from_deck = function(self, card, from_debuff)
-        G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+        G.jokers.config.card_limit = G.jokers.config.card_limit + card.ability.extra.sl
     end
 }

@@ -2,7 +2,7 @@ SMODS.Joker{ --Susie
     key = "susie",
     config = {
         extra = {
-            Xmult = 2,
+            xMult = 2,
             rosemod2_tensionhorn = 0
         }
     },
@@ -10,15 +10,17 @@ SMODS.Joker{ --Susie
         ['name'] = 'Susie',
         ['text'] = {
             [1] = 'Played {C:hearts}Hearts{} and {C:spades}Spades{} each',
-            [2] = 'give {X:mult,C:white}X2{} Mult when scored'
+            [2] = 'give {X:mult,C:white}X#1#{} Mult when scored',
+            [3] = '{C:white}.{}',
+            [4] = '{C:inactive}Music by Toby Fox{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 4,
-        y = 3
+        x = 8,
+        y = 5
     },
     display_size = {
         w = 71 * 1, 
@@ -32,10 +34,10 @@ SMODS.Joker{ --Susie
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_toby"] = true },
+    pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 5,
-        y = 3
+        x = 9,
+        y = 5
     },
     in_pool = function(self, args)
           return (
@@ -46,8 +48,20 @@ SMODS.Joker{ --Susie
           and true
       end,
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xMult}}
+    end,
+
     
     calculate = function(self, card, context)
+        if context.individual and context.cardarea == G.play  then
+            if (context.other_card:is_suit("Spades") or context.other_card:is_suit("Hearts")) then
+                return {
+                    Xmult = card.ability.extra.xMult
+                }
+            end
+        end
         if context.setting_blind  and not context.blueprint then
             G.E_MANAGER:add_event(Event({
             func = function()
@@ -56,13 +70,6 @@ SMODS.Joker{ --Susie
                     return true
                     end,
                 }))
-            end
-            if context.individual and context.cardarea == G.play  then
-                if (context.other_card:is_suit("Spades") or context.other_card:is_suit("Hearts")) then
-                    return {
-                        Xmult = card.ability.extra.Xmult
-                    }
-                end
             end
         end
 }

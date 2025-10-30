@@ -3,7 +3,10 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumbass Pack",
         text = {
-            [1] = 'Choose {C:attention}1{} of {C:attention}2{} of Rose\'s Dumbass Joker Cards.'
+            [1] = 'Choose {C:attention}1{} of {C:attention}2{} of Rose\'s Dumbass Joker Cards.',
+            [2] = '{C:white}.{}',
+            [3] = '{C:inactive}Art by Kierkat10 as {}',
+            [4] = '{C:inactive}part of JokerForge placeholders{}'
         },
         group_name = "rosemod2_boosters"
     },
@@ -38,7 +41,10 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumberass Pack",
         text = {
-            [1] = 'Choose {C:attention}1{} of {C:attention}4{} of Rose\'s Dumbass Joker Cards.'
+            [1] = 'Choose {C:attention}1{} of {C:attention}4{} of Rose\'s Dumbass Joker Cards.',
+            [2] = '{C:white}.{}',
+            [3] = '{C:inactive}Art by Kierkat10 as {}',
+            [4] = '{C:inactive}part of JokerForge placeholders{}'
         },
         group_name = "rosemod2_boosters"
     },
@@ -75,7 +81,10 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumbestass Pack",
         text = {
-            [1] = 'Choose {C:attention}2{} of {C:attention}6{} of Rose\'s Dumbass Joker Cards.'
+            [1] = 'Choose {C:attention}2{} of {C:attention}6{} of Rose\'s Dumbass Joker Cards.',
+            [2] = '{C:white}.{}',
+            [3] = '{C:inactive}Art by Kierkat10 as {}',
+            [4] = '{C:inactive}part of JokerForge placeholders{}'
         },
         group_name = "rosemod2_boosters"
     },
@@ -114,7 +123,10 @@ SMODS.Booster {
         text = {
             [1] = 'Choose {C:attention}1 {}of {C:attention}2{} Jokers that',
             [2] = 'reference media related to',
-            [3] = 'an {C:attention}Irradiated and Vexing Canine{}'
+            [3] = 'an {C:attention}Certain Vexing Canine{}',
+            [4] = '{C:white}.{}',
+            [5] = '{C:inactive}Art by Kierkat10 as {}',
+            [6] = '{C:inactive}part of JokerForge placeholders{}'
         },
         group_name = "rosemod2_boosters"
     },

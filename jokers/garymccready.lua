@@ -3,21 +3,21 @@ SMODS.Joker{ --Gary McCready
     config = {
         extra = {
             mult = 400,
-            Xmult = 4
+            xmult = 4
         }
     },
     loc_txt = {
         ['name'] = 'Gary McCready',
         ['text'] = {
-            [1] = '{C:mult}+400{} Mult',
-            [2] = '{X:mult,C:white}X4{} Mult'
+            [1] = '{C:mult}+#1#{} Mult',
+            [2] = '{X:mult,C:white}X#2#{} Mult'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 6,
+        x = 2,
         y = 4
     },
     display_size = {
@@ -34,7 +34,7 @@ SMODS.Joker{ --Gary McCready
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 7,
+        x = 3,
         y = 4
     },
     in_pool = function(self, args)
@@ -46,13 +46,18 @@ SMODS.Joker{ --Gary McCready
           and true
       end,
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.mult, card.ability.extra.xmult}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
                 mult = card.ability.extra.mult,
                 extra = {
-                Xmult = card.ability.extra.Xmult
+                Xmult = card.ability.extra.xmult
             }
         }
     end

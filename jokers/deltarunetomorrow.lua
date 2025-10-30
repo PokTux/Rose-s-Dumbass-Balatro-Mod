@@ -2,13 +2,13 @@ SMODS.Joker{ --Deltarune Tomorrow
     key = "deltarunetomorrow",
     config = {
         extra = {
-            Xmult = 3.4
+            xm = 3.4
         }
     },
     loc_txt = {
         ['name'] = 'Deltarune Tomorrow',
         ['text'] = {
-            [1] = '{X:mult,C:white}X3.4{} Mult if scored hand',
+            [1] = '{X:mult,C:white}X#1#{} Mult if scored hand',
             [2] = 'contains a {C:attention}5 {}and a {C:attention}6{}'
         },
         ['unlock'] = {
@@ -33,6 +33,11 @@ SMODS.Joker{ --Deltarune Tomorrow
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_rosemod2_toby"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xm}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
@@ -56,7 +61,7 @@ SMODS.Joker{ --Deltarune Tomorrow
                     return rankCount >= 1
                     end)()) then
                         return {
-                            Xmult = card.ability.extra.Xmult,
+                            Xmult = card.ability.extra.xm,
                             message = "Deltarune Today!?"
                         }
                     end

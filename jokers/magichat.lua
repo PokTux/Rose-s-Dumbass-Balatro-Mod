@@ -3,8 +3,8 @@ SMODS.Joker{ --Magic Hat
     config = {
         extra = {
             ability = 1,
+            xm = 3,
             hands = 1,
-            Xmult = 3,
             round = 0,
             perishable = 0,
             respect = 0
@@ -16,8 +16,8 @@ SMODS.Joker{ --Magic Hat
             [1] = 'Randomly do one of the following',
             [2] = 'when hand is played',
             [3] = '',
-            [4] = '{X:mult,C:white}X3{} Mult',
-            [5] = '{C:chips}+1{} Hand',
+            [4] = '{X:mult,C:white}X#2#{} Mult',
+            [5] = '{C:chips}+#3#{} Hand',
             [6] = 'Apply a {C:attention}Magic Hat Seal{} to scored cards',
             [7] = 'Create a {C:attention}perishable {}{C:common}Common {}Joker',
             [8] = '{C:inactive}(Must have room){}'
@@ -52,7 +52,7 @@ SMODS.Joker{ --Magic Hat
         else
             error("JOKERFORGE: Invalid key in infoQueues. \"rosemod2_hatseal\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
         end
-        return {vars = {}}
+        return {vars = {card.ability.extra.ability, card.ability.extra.xm, card.ability.extra.hands}}
     end,
 
     
@@ -97,7 +97,7 @@ SMODS.Joker{ --Magic Hat
                 if context.cardarea == G.jokers and context.joker_main  and not context.blueprint then
                     if (card.ability.extra.ability or 0) == 1 then
                         return {
-                            Xmult = card.ability.extra.Xmult,
+                            Xmult = card.ability.extra.xm,
                             message = "Triple Score!"
                         }
                     end

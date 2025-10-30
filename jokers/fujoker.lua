@@ -2,13 +2,13 @@ SMODS.Joker{ --Fujoker
     key = "fujoker",
     config = {
         extra = {
-            mult = 24
+            m = 24
         }
     },
     loc_txt = {
         ['name'] = 'Fujoker',
         ['text'] = {
-            [1] = '{C:mult}+24{} Mult if scored hand',
+            [1] = '{C:mult}+#1#{} Mult if scored hand',
             [2] = 'contains a {C:attention}Pair {}of {C:attention}Kings{}'
         },
         ['unlock'] = {
@@ -33,6 +33,11 @@ SMODS.Joker{ --Fujoker
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.m}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
@@ -47,7 +52,7 @@ SMODS.Joker{ --Fujoker
                 return rankCount >= 2
                 end)() then
                     return {
-                        mult = card.ability.extra.mult,
+                        mult = card.ability.extra.m,
                         message = "YAOI!"
                     }
                 end

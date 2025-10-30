@@ -2,15 +2,15 @@ SMODS.Joker{ --Lakon Cockpit
     key = "lakoncockpit",
     config = {
         extra = {
-            xchips = 2,
-            dollars = 4
+            xc = 2,
+            mny = 4
         }
     },
     loc_txt = {
         ['name'] = 'Lakon Cockpit',
         ['text'] = {
-            [1] = '{C:attention}Glass{} cards give {X:chips,C:white}X2{} Chips an',
-            [2] = 'and {C:money}$4{} when scored but {C:red}always break{}'
+            [1] = '{C:attention}Glass{} cards give {X:chips,C:white}X#1#{} Chips an',
+            [2] = 'and {C:money}$#2#{} when scored but {C:red}always break{}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -34,6 +34,11 @@ SMODS.Joker{ --Lakon Cockpit
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xc, card.ability.extra.mny}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.destroy_card and context.destroy_card.should_destroy  then
@@ -44,9 +49,9 @@ SMODS.Joker{ --Lakon Cockpit
             if SMODS.get_enhancements(context.other_card)["m_glass"] == true then
                 context.other_card.should_destroy = true
                 return {
-                    x_chips = card.ability.extra.xchips,
+                    x_chips = card.ability.extra.xc,
                     extra = {
-                    dollars = card.ability.extra.dollars,
+                    dollars = card.ability.extra.mny,
                     colour = G.C.MONEY,
                     extra = {
                     message = "Destroyed!",

@@ -2,14 +2,14 @@ SMODS.Joker{ --V.IV Rusty
     key = "vivrusty",
     config = {
         extra = {
-            Xmult = 1.75
+            xm = 1.75
         }
     },
     loc_txt = {
         ['name'] = 'V.IV Rusty',
         ['text'] = {
             [1] = 'Played {C:attention}Steel Cards{} each give',
-            [2] = '{X:red,C:white}X1.75{} Mult when scored'
+            [2] = '{X:red,C:white}X#1#{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
@@ -33,12 +33,17 @@ SMODS.Joker{ --V.IV Rusty
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xm}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
             if SMODS.get_enhancements(context.other_card)["m_steel"] == true then
                 return {
-                    Xmult = card.ability.extra.Xmult
+                    Xmult = card.ability.extra.xm
                 }
             end
         end

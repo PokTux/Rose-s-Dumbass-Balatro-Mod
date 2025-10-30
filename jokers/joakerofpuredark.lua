@@ -2,14 +2,14 @@ SMODS.Joker{ --JOAKER OF PURE DARK
     key = "joakerofpuredark",
     config = {
         extra = {
-            chips = 30,
+            ch = 40,
             rosemod2_toolong = 0
         }
     },
     loc_txt = {
         ['name'] = 'JOAKER OF PURE DARK',
         ['text'] = {
-            [1] = '{C:chips}+40{} CHIPS',
+            [1] = '{C:chips}+#1#{} CHIPS',
             [2] = '{C:red}DESTROAYS {}ALL SCOARED CAIRDS',
             [3] = 'ON {C:attention}FINAIL HAIND{} OF ROAUND'
         },
@@ -35,11 +35,16 @@ SMODS.Joker{ --JOAKER OF PURE DARK
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_rosemod2_toby"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.ch}}
+    end,
+
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-                chips = card.ability.extra.chips
+                chips = card.ability.extra.ch
             }
         end
         if context.hand_drawn  and not context.blueprint then

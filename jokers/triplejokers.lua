@@ -2,15 +2,15 @@ SMODS.Joker{ --Triple Jokers
     key = "triplejokers",
     config = {
         extra = {
-            mult = 10,
-            chips = 35,
-            dollars = 2
+            m = 10,
+            c = 35,
+            s = 2
         }
     },
     loc_txt = {
         ['name'] = 'Triple Jokers',
         ['text'] = {
-            [1] = '{C:mult}+10{} Mult {C:chips}+35{} Chips and Earn{C:money} $2{} if',
+            [1] = '{C:mult}+#1#{} Mult {C:chips}+#2#{} Chips and Earn{C:money} $#3#{} if',
             [2] = 'played hand contains exactly',
             [3] = 'one {C:hearts}Heart{}, one {C:clubs}Club{}, and one {C:diamonds}Diamond{}'
         },
@@ -35,6 +35,11 @@ SMODS.Joker{ --Triple Jokers
     discovered = true,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.m, card.ability.extra.c, card.ability.extra.s}}
+    end,
 
     
     calculate = function(self, card, context)
@@ -68,12 +73,12 @@ SMODS.Joker{ --Triple Jokers
                         return suitCount == 1
                         end)()) then
                             return {
-                                mult = card.ability.extra.mult,
+                                mult = card.ability.extra.m,
                                 extra = {
-                                chips = card.ability.extra.chips,
+                                chips = card.ability.extra.c,
                                 colour = G.C.CHIPS,
                                 extra = {
-                                dollars = card.ability.extra.dollars,
+                                dollars = card.ability.extra.s,
                                 colour = G.C.MONEY
                             }
                         }

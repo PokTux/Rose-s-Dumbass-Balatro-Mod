@@ -11,8 +11,8 @@ SMODS.Joker{ --Crimson Interface
     loc_txt = {
         ['name'] = 'Crimson Interface',
         ['text'] = {
-            [1] = 'After 16 cards are scored create 2 random {C:planet}',
-            [2] = 'Planet{} cards and {C:red}explode spectacularly{}',
+            [1] = 'After 16 cards are scored create {C:attention}2{} random',
+            [2] = '{C:dark_edition}Negative {}{C:planet}Planet{} cards and {C:red}self destruct{}',
             [3] = '',
             [4] = '',
             [5] = '{C:inactive}(Currently{} {C:attention}#1#{}{C:inactive}/16){}{}'
@@ -59,8 +59,12 @@ SMODS.Joker{ --Crimson Interface
                             trigger = 'after',
                             delay = 0.4,
                             func = function()
+                                if G.consumeables.config.card_limit > #G.consumeables.cards + G.GAME.consumeable_buffer then
+                                    G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+                                end
+                                
                                 play_sound('timpani')
-                                SMODS.add_card({ set = 'Planet', })                            
+                                SMODS.add_card({ set = 'Planet', edition = 'e_negative', })                            
                                 card:juice_up(0.3, 0.5)
                                 return true
                                 end

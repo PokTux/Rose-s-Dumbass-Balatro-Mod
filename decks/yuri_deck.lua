@@ -25,9 +25,7 @@ SMODS.Back {
                       if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
                           G.GAME.joker_buffer = G.GAME.joker_buffer + 1
                       local new_joker = SMODS.add_card({ set = 'Joker', key = 'j_rosemod2_yuri' })
-                      if new_joker then
                           new_joker:add_sticker('eternal', true)
-                      end
                           G.GAME.joker_buffer = 0
                       end
                       return true
@@ -39,10 +37,8 @@ SMODS.Back {
                       if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
                           G.GAME.joker_buffer = G.GAME.joker_buffer + 1
                       local new_joker = SMODS.add_card({ set = 'Joker', key = 'j_blueprint' })
-                      if new_joker then
                           new_joker:set_edition("e_polychrome", true)
                           new_joker:add_sticker('eternal', true)
-                      end
                           G.GAME.joker_buffer = 0
                       end
                       return true
@@ -54,10 +50,8 @@ SMODS.Back {
                       if #G.jokers.cards + G.GAME.joker_buffer < G.jokers.config.card_limit then
                           G.GAME.joker_buffer = G.GAME.joker_buffer + 1
                       local new_joker = SMODS.add_card({ set = 'Joker', key = 'j_brainstorm' })
-                      if new_joker then
                           new_joker:set_edition("e_polychrome", true)
                           new_joker:add_sticker('eternal', true)
-                      end
                           G.GAME.joker_buffer = 0
                       end
                       return true

@@ -3,13 +3,13 @@ SMODS.Joker{ --Go Ahead, Mr Jokestarr
     config = {
         extra = {
             flip = 0,
-            Xmult = 3
+            xm = 3
         }
     },
     loc_txt = {
         ['name'] = 'Go Ahead, Mr Jokestarr',
         ['text'] = {
-            [1] = '{X:mult,C:white}X3{} Mult',
+            [1] = '{X:mult,C:white}X#2#{} Mult',
             [2] = 'All Jokers are {C:attention}flipped and shuffled {}',
             [3] = 'until{C:attention} first hand {}is played'
         },
@@ -34,6 +34,11 @@ SMODS.Joker{ --Go Ahead, Mr Jokestarr
     discovered = true,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.flip, card.ability.extra.xm}}
+    end,
 
     
     calculate = function(self, card, context)
@@ -93,7 +98,7 @@ SMODS.Joker{ --Go Ahead, Mr Jokestarr
     end
     if context.cardarea == G.jokers and context.joker_main  then
         return {
-            Xmult = card.ability.extra.Xmult
+            Xmult = card.ability.extra.xm
         }
     end
     if context.after and context.cardarea == G.jokers  and not context.blueprint then
