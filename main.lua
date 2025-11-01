@@ -60,7 +60,7 @@ local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 
-local jokerIndexList = {51,4,38,16,7,9,26,21,34,47,29,3,24,28,43,50,23,36,10,32,1,35,8,20,17,6,44,49,19,11,18,45,40,33,2,31,5,46,15,42,41,13,12,30,22,37,48,14,27,39,25}
+local jokerIndexList = {51,4,39,18,7,9,27,11,35,48,30,3,25,29,44,10,24,37,12,33,1,36,8,22,19,6,45,50,21,13,20,46,41,34,2,32,5,47,17,43,42,15,14,31,23,38,49,16,28,40,26}
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -75,7 +75,7 @@ local function load_jokers_folder()
 end
 
 
-local consumableIndexList = {1,2}
+local consumableIndexList = {2,1}
 
 local function load_consumables_folder()
     local mod_path = SMODS.current_mod.path
@@ -174,6 +174,8 @@ SMODS.ObjectType({
         ["j_rosemod2_clublove"] = true,
         ["j_rosemod2_deltarunetomorrow"] = true,
         ["j_rosemod2_diamondlove"] = true,
+        ["j_rosemod2_elgatobalatro"] = true,
+        ["j_rosemod2_extrudejoker"] = true,
         ["j_rosemod2_fatasstetoplush"] = true,
         ["j_rosemod2_fujoker"] = true,
         ["j_rosemod2_gummyshark"] = true,
@@ -182,7 +184,6 @@ SMODS.ObjectType({
         ["j_rosemod2_himejoker"] = true,
         ["j_rosemod2_homophobicdog"] = true,
         ["j_rosemod2_imperialcutter"] = true,
-        ["j_rosemod2_invisiblejokercopy"] = true,
         ["j_rosemod2_joakerofpuredark"] = true,
         ["j_rosemod2_jokaro"] = true,
         ["j_rosemod2_lakoncockpit"] = true,
@@ -203,8 +204,7 @@ SMODS.ObjectType({
         ["j_rosemod2_thisjokerisalreadyhere"] = true,
         ["j_rosemod2_token"] = true,
         ["j_rosemod2_triplejokers"] = true,
-        ["j_rosemod2_vivrusty"] = true,
-        ["j_rosemod2_yorickcopy"] = true
+        ["j_rosemod2_vivrusty"] = true
     },
 })
 
@@ -269,5 +269,13 @@ SMODS.ObjectType({
         ["j_rosemod2_mirage"] = true,
         ["j_rosemod2_sorren"] = true,
         ["j_rosemod2_valkyr"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "rosemod2_Meme",
+    cards = {
+        ["j_rosemod2_mustang"] = true,
+        ["j_rosemod2_thechair"] = true
     },
 })

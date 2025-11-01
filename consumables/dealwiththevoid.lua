@@ -2,14 +2,11 @@ SMODS.Consumable {
     key = 'dealwiththevoid',
     set = 'Spectral',
     pos = { x = 1, y = 0 },
-    config = { extra = {
-        hand_size_value = 1
-    } },
     loc_txt = {
         name = 'Deal With The Void',
         text = {
-        [1] = 'Creates a {C:legendary}Legendary{} Warframe',
-        [2] = '{C:red}-1{} hand size',
+        [1] = 'Creates a {C:legendary}Legendary{} Joker',
+        [2] = 'of a {C:attention}specific theme{}',
         [3] = '{C:inactive}(Must have room){}',
         [4] = '{C:white}.{}',
         [5] = '{C:inactive}Let\'s say we shake on it...{}'
@@ -43,16 +40,6 @@ SMODS.Consumable {
                   end
               }))
               delay(0.6)
-            G.E_MANAGER:add_event(Event({
-                trigger = 'after',
-                delay = 0.4,
-                func = function()
-                    card_eval_status_text(used_card, 'extra', nil, nil, nil, {message = "-"..tostring(1).." Hand Size", colour = G.C.RED})
-                    G.hand:change_size(-1)
-                    return true
-                end
-            }))
-            delay(0.6)
     end,
     can_use = function(self, card)
         return true
