@@ -31,7 +31,7 @@ SMODS.Joker{ --The Chair
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_Meme"] = true },
+    pools = { ["rosemod2_rosemod2_jokers"] = true },
 
     loc_vars = function(self, info_queue, card)
         
