@@ -86,6 +86,8 @@ SMODS.Sound{
     volume=0.5,
 }
 
+--Susie Joker Music--
+
 SMODS.Sound({
     key = "music_buster", 
     path = "music_buster.ogg",
@@ -119,4 +121,26 @@ SMODS.Sound({
 	end,
 })
 
+--Tenna Joker Music--
 
+SMODS.Sound({
+    key = "music_tenna", 
+    path = "music_tenna.ogg",
+    pitch = 1,
+    volume = 0.6,
+    select_music_track = function()
+        if jokerExists("j_rosemod2_anttenna") and string.len(G.GAME.blind.name) > 0 then
+		    return 80 end
+	end,
+})
+
+SMODS.Sound({
+    key = "music_tennaboss", 
+    path = "music_tennaboss.ogg",
+    pitch = 1,
+    volume = 0.6,
+    select_music_track = function()
+        if jokerExists("j_rosemod2_anttenna") and G.GAME.blind and G.GAME.blind:get_type() == 'Boss' then
+		    return 81 end
+	end,
+})

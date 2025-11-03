@@ -1,6 +1,6 @@
 SMODS.Back {
     key = 'standard_playing_card_deck',
-    pos = { x = 2, y = 0 },
+    pos = { x = 3, y = 0 },
     config = {
 },
     loc_txt = {
