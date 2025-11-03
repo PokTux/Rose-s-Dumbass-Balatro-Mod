@@ -2,23 +2,27 @@ SMODS.Joker{ --Gary McCready
     key = "garymccready",
     config = {
         extra = {
-            mult = 400,
-            xmult = 4
+            mult = 40,
+            xmult = 4,
+            chips = 40,
+            xchips = 4
         }
     },
     loc_txt = {
         ['name'] = 'Gary McCready',
         ['text'] = {
-            [1] = '{C:mult}+#1#{} Mult',
-            [2] = '{X:mult,C:white}X#2#{} Mult'
+            [1] = '{C:chips}+#3#{} Chips',
+            [2] = '{C:mult}+#1#{} Mult',
+            [3] = '{X:chips,C:white}X#4#{} Chips',
+            [4] = '{X:mult,C:white}X#2#{} Mult'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 2,
-        y = 4
+        x = 0,
+        y = 5
     },
     display_size = {
         w = 71 * 1, 
@@ -34,8 +38,8 @@ SMODS.Joker{ --Gary McCready
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 3,
-        y = 4
+        x = 1,
+        y = 5
     },
     in_pool = function(self, args)
           return (
@@ -48,18 +52,25 @@ SMODS.Joker{ --Gary McCready
 
     loc_vars = function(self, info_queue, card)
         
-        return {vars = {card.ability.extra.mult, card.ability.extra.xmult}}
+        return {vars = {card.ability.extra.mult, card.ability.extra.xmult, card.ability.extra.chips, card.ability.extra.xchips}}
     end,
 
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
+                chips = card.ability.extra.chips,
+                extra = {
                 mult = card.ability.extra.mult,
+                extra = {
+                x_chips = card.ability.extra.xchips,
+                colour = G.C.DARK_EDITION,
                 extra = {
                 Xmult = card.ability.extra.xmult
             }
         }
-    end
+    }
+}
+end
 end
 }

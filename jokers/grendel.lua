@@ -9,18 +9,19 @@ SMODS.Joker{ --Grendel
     loc_txt = {
         ['name'] = 'Grendel',
         ['text'] = {
-            [1] = '{C:attention}Discarding{} cards while this Joker is',
+            [1] = '{C:attention}Discarding{} cards while a Joker is',
             [2] = 'selected will cause them to be {C:red}consumed {}',
-            [3] = 'and this Joker will gain {X:mult,C:white}X0.1{} Mult',
-            [4] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult){}'
+            [3] = 'and this Joker to gain {X:mult,C:white}X0.1{} Mult per',
+            [4] = 'card {C:red}consumed{}',
+            [5] = '{C:inactive}(Currently{} {X:mult,C:white}X#1#{} {C:inactive}Mult){}'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 4,
-        y = 5
+        x = 2,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -36,8 +37,8 @@ SMODS.Joker{ --Grendel
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 5,
-        y = 5
+        x = 3,
+        y = 6
     },
     in_pool = function(self, args)
           return (

@@ -39,6 +39,12 @@ SMODS.Joker{ --Token
 
     loc_vars = function(self, info_queue, card)
         
+        local info_queue_0 = G.P_CENTERS["e_negative"]
+        if info_queue_0 then
+            info_queue[#info_queue + 1] = info_queue_0
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"e_negative\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_rosemod2_token') 
         return {vars = {card.ability.extra.xm, card.ability.extra.ignore, new_numerator, new_denominator}}
     end,

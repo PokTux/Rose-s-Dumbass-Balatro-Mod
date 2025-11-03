@@ -35,6 +35,12 @@ SMODS.Joker{ --V.IV Rusty
 
     loc_vars = function(self, info_queue, card)
         
+        local info_queue_0 = G.P_CENTERS["m_steel"]
+        if info_queue_0 then
+            info_queue[#info_queue + 1] = info_queue_0
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"m_steel\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
         return {vars = {card.ability.extra.xm}}
     end,
 

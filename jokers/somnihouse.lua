@@ -35,7 +35,7 @@ SMODS.Joker{ --Somni House
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_jokers"] = true },
+    pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_injoker"] = true },
 
     
     calculate = function(self, card, context)

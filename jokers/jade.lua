@@ -23,8 +23,8 @@ SMODS.Joker{ --Jade
         }
     },
     pos = {
-        x = 8,
-        y = 4
+        x = 6,
+        y = 5
     },
     display_size = {
         w = 71 * 1, 
@@ -40,8 +40,8 @@ SMODS.Joker{ --Jade
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 9,
-        y = 4
+        x = 7,
+        y = 5
     },
     in_pool = function(self, args)
           return (
@@ -51,6 +51,23 @@ SMODS.Joker{ --Jade
           )
           and true
       end,
+
+    loc_vars = function(self, info_queue, card)
+        
+        local info_queue_0 = G.P_CENTERS["e_polychrome"]
+        if info_queue_0 then
+            info_queue[#info_queue + 1] = info_queue_0
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"e_polychrome\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
+        local info_queue_1 = G.P_CENTERS["e_negative"]
+        if info_queue_1 then
+            info_queue[#info_queue + 1] = info_queue_1
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"e_negative\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
+        return {vars = {}}
+    end,
 
     
     calculate = function(self, card, context)

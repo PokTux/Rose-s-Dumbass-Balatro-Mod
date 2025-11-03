@@ -21,8 +21,8 @@ SMODS.Joker{ --Valkyr
         }
     },
     pos = {
-        x = 2,
-        y = 5
+        x = 0,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -38,8 +38,8 @@ SMODS.Joker{ --Valkyr
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 3,
-        y = 5
+        x = 1,
+        y = 6
     },
     in_pool = function(self, args)
           return (

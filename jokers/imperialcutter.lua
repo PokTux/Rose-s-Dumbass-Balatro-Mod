@@ -36,7 +36,7 @@ SMODS.Joker{ --Imperial Cutter
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_jokers"] = true },
+    pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_injoker"] = true },
 
     loc_vars = function(self, info_queue, card)
         

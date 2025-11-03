@@ -4,7 +4,8 @@ SMODS.Joker{ --Knight
         extra = {
             perish = 0,
             perishable = 0,
-            ignore = 0
+            ignore = 0,
+            rosemod2_tensionhorn = 0
         }
     },
     loc_txt = {
@@ -20,7 +21,7 @@ SMODS.Joker{ --Knight
         }
     },
     pos = {
-        x = 0,
+        x = 8,
         y = 6
     },
     display_size = {
@@ -35,9 +36,9 @@ SMODS.Joker{ --Knight
     unlocked = true,
     discovered = true,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_legendary"] = true },
+    pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 1,
+        x = 9,
         y = 6
     },
     in_pool = function(self, args)
@@ -101,7 +102,15 @@ SMODS.Joker{ --Knight
                         colour = G.C.BLUE
                     }
                 }
+            else
+                G.E_MANAGER:add_event(Event({
+                func = function()
+                    play_sound("rosemod2_tensionhorn")
+                        SMODS.calculate_effect({message = "!"}, card)
+                        return true
+                        end,
+                    }))
+                end
             end
         end
-    end
 }

@@ -2,9 +2,9 @@ SMODS.Joker{ --Mr. Green
     key = "mrgreen",
     config = {
         extra = {
-            mny = 7,
             odds = 4,
             dollars = 0,
+            dollars2 = 7,
             start_dissolve = 0,
             n = 0
         }
@@ -12,7 +12,7 @@ SMODS.Joker{ --Mr. Green
     loc_txt = {
         ['name'] = 'Mr. Green',
         ['text'] = {
-            [1] = 'Earn {C:money}$#1#{} at end of round',
+            [1] = 'Earn {C:money}$7{} at end of round',
             [2] = '{C:green}#4# in #5#{} chance to set money to',
             [3] = '{C:money}$0{} and {C:red}self destruct{} at end of round',
             [4] = '{C:white}.{}',
@@ -43,7 +43,7 @@ SMODS.Joker{ --Mr. Green
     loc_vars = function(self, info_queue, card)
         
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_rosemod2_mrgreen') 
-        return {vars = {card.ability.extra.mny, card.ability.extra.n, card.ability.extra.start_dissolve, new_numerator, new_denominator}}
+        return {vars = {card.ability.extra.n, card.ability.extra.start_dissolve, new_numerator, new_denominator}}
     end,
 
     
@@ -66,7 +66,7 @@ SMODS.Joker{ --Mr. Green
                                     end
                                 else
                                     return {
-                                        dollars = card.ability.extra.mny
+                                        dollars = card.ability.extra.dollars2
                                     }
                                 end
                             end

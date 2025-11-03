@@ -1,0 +1,80 @@
+SMODS.Joker{ --Majestic-Class Interdictor
+    key = "majesticclassinterdictor",
+    config = {
+        extra = {
+            slot_change = 2,
+            n = 0
+        }
+    },
+    loc_txt = {
+        ['name'] = 'Majestic-Class Interdictor',
+        ['text'] = {
+            [1] = '{C:attention}+2{} consumable slots',
+            [2] = 'Create a {C:enhanced}Gu-97{}',
+            [3] = 'at end of round'
+        },
+        ['unlock'] = {
+            [1] = 'Unlocked by default.'
+        }
+    },
+    pos = {
+        x = 7,
+        y = 4
+    },
+    display_size = {
+        w = 71 * 1, 
+        h = 95 * 1
+    },
+    cost = 7,
+    rarity = 2,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    unlocked = true,
+    discovered = true,
+    atlas = 'CustomJokers',
+    pools = { ["rosemod2_rosemod2_jokers"] = true },
+
+    
+    calculate = function(self, card, context)
+    if context.end_of_round and context.game_over == false and context.main_eval  then
+        return {
+            func = function()
+                
+                for i = 1, math.min(1, G.consumeables.config.card_limit - #G.consumeables.cards) do
+                    G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.4,
+                    func = function()
+                        play_sound('timpani')
+                        SMODS.add_card({ set = 'joker_launched_fighter', key = 'c_rosemod2_gu97'})                            
+                        card:juice_up(0.3, 0.5)
+                        return true
+                        end
+                    }))
+                end
+                delay(0.6)
+                
+                if created_consumable then
+                    card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = localize('k_plus_consumable'), colour = G.C.PURPLE})
+                end
+                return true
+                end
+            }
+        end
+    end,
+
+    add_to_deck = function(self, card, from_debuff)
+        G.E_MANAGER:add_event(Event({func = function()
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit + card.ability.extra.slot_change
+            return true
+        end }))
+    end,
+
+    remove_from_deck = function(self, card, from_debuff)
+        G.E_MANAGER:add_event(Event({func = function()
+            G.consumeables.config.card_limit = G.consumeables.config.card_limit - card.ability.extra.slot_change
+            return true
+        end }))
+    end
+}
