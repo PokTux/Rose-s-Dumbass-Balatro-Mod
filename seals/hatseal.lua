@@ -19,7 +19,6 @@ SMODS.Seal {
     unlocked = true,
     discovered = true,
     no_collection = false,
-    sound = { sound = "crumple1", per = 1.2, vol = 0.4 },
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then
             return { chips = (function() local max = 0; for _, card in ipairs(G.hand and G.hand.cards or {}) do if card.base.id > max then max = card.base.id end end; return max end)() }

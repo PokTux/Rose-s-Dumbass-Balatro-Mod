@@ -2,7 +2,7 @@ SMODS.Back {
     key = 'surveydeck',
     pos = { x = 2, y = 0 },
     config = {
-      joker_slots_value = 1,
+      hands_value = 1,
         add_starting_cards_count = 4,
         add_starting_cards_count = 1,
         add_starting_cards_count = 2,
@@ -12,7 +12,7 @@ SMODS.Back {
         text = {
             [1] = 'Start with {C:spectral}Vessel{}',
             [2] = 'and 7 extra {C:attention}Aces{}',
-            [3] = '{C:dark_edition}-1{} Joker Slot'
+            [3] = '{C:blue}-1{} hand every round'
         },
     },
     unlocked = true,
@@ -20,6 +20,7 @@ SMODS.Back {
     no_collection = false,
     atlas = 'CustomDecks',
      apply = function(self, back)
+            G.GAME.starting_params.hands = G.GAME.starting_params.hands - 1
             G.E_MANAGER:add_event(Event({
             func = function()
             for i = 1, 1 do
@@ -79,6 +80,5 @@ SMODS.Back {
                     return true
                 end
             }))
-            G.GAME.starting_params.joker_slots = G.GAME.starting_params.joker_slots - 1
     end
 }

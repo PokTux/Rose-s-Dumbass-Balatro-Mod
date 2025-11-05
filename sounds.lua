@@ -86,6 +86,13 @@ SMODS.Sound{
     volume=0.5,
 }
 
+SMODS.Sound{
+    key="firehole",
+    path="firehole.ogg",
+    pitch=0.7,
+    volume=0.6,
+}
+
 --Susie Joker Music--
 
 SMODS.Sound({

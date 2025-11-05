@@ -3,10 +3,7 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumbass Pack",
         text = {
-            [1] = 'Choose {C:attention}1{} of {C:attention}2{} of Rose\'s Dumbass Joker Cards.',
-            [2] = '{C:white}.{}',
-            [3] = '{C:inactive}Art by Kierkat10 as {}',
-            [4] = '{C:inactive}part of JokerForge placeholders{}'
+            [1] = 'Choose {C:attention}1{} of {C:attention}2{} of Rose\'s Dumbass Joker Cards'
         },
         group_name = "rosemod2_boosters"
     },
@@ -41,10 +38,7 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumberass Pack",
         text = {
-            [1] = 'Choose {C:attention}1{} of {C:attention}4{} of Rose\'s Dumbass Joker Cards.',
-            [2] = '{C:white}.{}',
-            [3] = '{C:inactive}Art by Kierkat10 as {}',
-            [4] = '{C:inactive}part of JokerForge placeholders{}'
+            [1] = 'Choose {C:attention}1{} of {C:attention}4{} of Rose\'s Dumbass Joker Cards'
         },
         group_name = "rosemod2_boosters"
     },
@@ -81,15 +75,12 @@ SMODS.Booster {
     loc_txt = {
         name = "Dumbestass Pack",
         text = {
-            [1] = 'Choose {C:attention}2{} of {C:attention}6{} of Rose\'s Dumbass Joker Cards.',
-            [2] = '{C:white}.{}',
-            [3] = '{C:inactive}Art by Kierkat10 as {}',
-            [4] = '{C:inactive}part of JokerForge placeholders{}'
+            [1] = 'Choose up to {C:attention}2{} of {C:attention}5{} of Rose\'s Dumbass Joker Cards'
         },
         group_name = "rosemod2_boosters"
     },
-    config = { extra = 6, choose = 2 },
-    cost = 9,
+    config = { extra = 5, choose = 2 },
+    cost = 8,
     weight = 0.5,
     atlas = "CustomBoosters",
     pos = { x = 2, y = 0 },
@@ -123,10 +114,7 @@ SMODS.Booster {
         text = {
             [1] = 'Choose {C:attention}1 {}of {C:attention}2{} Jokers that',
             [2] = 'reference media related to',
-            [3] = 'an {C:attention}Certain Vexing Canine{}',
-            [4] = '{C:white}.{}',
-            [5] = '{C:inactive}Art by Kierkat10 as {}',
-            [6] = '{C:inactive}part of JokerForge placeholders{}'
+            [3] = 'a {C:attention}Certain Vexing Canine{}'
         },
         group_name = "rosemod2_boosters"
     },
@@ -188,6 +176,76 @@ SMODS.Booster {
             soulable = true,
             key_append = "rosemod2_shipyard_pack"
         }
+    end,
+    particles = function(self)
+        G.booster_pack_sparkles = Particles(1, 1, 0, 0, {
+            timer = 0.015,
+            scale = 0.2,
+            initialize = true,
+            lifespan = 1,
+            speed = 1.1,
+            padding = -1,
+            attach = G.ROOM_ATTACH,
+            colours = { G.C.WHITE, lighten(G.C.PURPLE, 0.4), lighten(G.C.PURPLE, 0.2), lighten(G.C.GOLD, 0.2) },
+            fill = true
+        })
+        G.booster_pack_sparkles.fade_alpha = 1
+        G.booster_pack_sparkles:fade(1, 0)
+    end,
+}
+
+
+SMODS.Booster {
+    key = 'giga_consumable_pack',
+    loc_txt = {
+        name = "Giga Consumable Pack",
+        text = {
+            [1] = 'Choose up to {C:attention}2{} of {C:attention}9{} {C:planet}Planet{}, {C:tarot}Tarot{}, or',
+            [2] = '{C:spectral}Spectral {}Cards to be used immediately'
+        },
+        group_name = "rosemod2_boosters"
+    },
+    config = { extra = 9, choose = 2 },
+    cost = 9,
+    weight = 0.7,
+    atlas = "CustomBoosters",
+    pos = { x = 5, y = 0 },
+    group_key = "rosemod2_boosters",
+    draw_hand = true,
+    discovered = true,
+    loc_vars = function(self, info_queue, card)
+        local cfg = (card and card.ability) or self.config
+        return {
+            vars = { cfg.choose, cfg.extra }
+        }
+    end,
+    create_card = function(self, card, i)
+        local selected_index = pseudorandom('rosemod2_giga_consumable_pack_card', 1, 3)
+        if selected_index == 1 then
+            return {
+            set = "Tarot",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append = "rosemod2_giga_consumable_pack"
+            }
+        elseif selected_index == 2 then
+            return {
+            set = "Planet",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append = "rosemod2_giga_consumable_pack"
+            }
+        elseif selected_index == 3 then
+            return {
+            set = "Spectral",
+                area = G.pack_cards,
+                skip_materialize = true,
+                soulable = true,
+                key_append = "rosemod2_giga_consumable_pack"
+            }
+        end
     end,
     particles = function(self)
         G.booster_pack_sparkles = Particles(1, 1, 0, 0, {

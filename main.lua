@@ -41,6 +41,14 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
+    key = "CustomEnhancements", 
+    path = "CustomEnhancements.png", 
+    px = 71,
+    py = 95, 
+    atlas_table = "ASSET_ATLAS"
+})
+
+SMODS.Atlas({
     key = "CustomSeals", 
     path = "CustomSeals.png", 
     px = 71,
@@ -60,7 +68,7 @@ local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 
-local jokerIndexList = {62,5,47,22,8,10,32,13,41,59,36,4,30,34,55,12,29,44,15,39,1,43,9,26,23,7,56,61,25,16,24,57,51,40,3,38,6,58,20,54,52,11,28,53,48,14,35,21,50,18,17,37,27,45,60,19,33,49,31,46,42,2}
+local jokerIndexList = {74,7,59,30,11,14,40,18,52,71,45,5,38,43,67,17,37,56,21,48,1,54,13,34,31,9,68,73,33,24,32,69,63,49,4,47,8,70,28,66,64,16,36,65,60,20,44,29,62,19,12,23,10,50,42,22,15,26,25,46,35,57,72,27,41,61,39,58,53,3,6,51,2,55}
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -75,7 +83,7 @@ local function load_jokers_folder()
 end
 
 
-local consumableIndexList = {5,1,8,4,7,2,3,6,9}
+local consumableIndexList = {6,1,10,4,9,2,3,8,11,5,7}
 
 local function load_consumables_folder()
     local mod_path = SMODS.current_mod.path
@@ -101,7 +109,22 @@ local function load_consumables_folder()
 end
 
 
-local sealIndexList = {1}
+local enhancementIndexList = {1}
+
+local function load_enhancements_folder()
+    local mod_path = SMODS.current_mod.path
+    local enhancements_path = mod_path .. "/enhancements"
+    local files = NFS.getDirectoryItemsInfo(enhancements_path)
+    for i = 1, #enhancementIndexList do
+        local file_name = files[enhancementIndexList[i]].name
+        if file_name:sub(-4) == ".lua" then
+            assert(SMODS.load_file("enhancements/" .. file_name))()
+        end
+    end
+end
+
+
+local sealIndexList = {1,2}
 
 local function load_seals_folder()
     local mod_path = SMODS.current_mod.path
@@ -116,7 +139,7 @@ local function load_seals_folder()
 end
 
 
-local deckIndexList = {4,3,2,1}
+local deckIndexList = {5,4,3,2,1}
 
 local function load_decks_folder()
     local mod_path = SMODS.current_mod.path
@@ -146,6 +169,7 @@ load_boosters_file()
 assert(SMODS.load_file("sounds.lua"))()
 load_jokers_folder()
 load_consumables_folder()
+load_enhancements_folder()
 load_seals_folder()
 load_decks_folder()
 SMODS.ObjectType({
@@ -171,14 +195,20 @@ SMODS.ObjectType({
         ["j_rosemod2_asuggestion"] = true,
         ["j_rosemod2_carpet"] = true,
         ["j_rosemod2_clownmaskedculprits"] = true,
+        ["j_rosemod2_club27"] = true,
         ["j_rosemod2_clublove"] = true,
+        ["j_rosemod2_crimson1"] = true,
         ["j_rosemod2_deltarunetomorrow"] = true,
         ["j_rosemod2_diamondlove"] = true,
+        ["j_rosemod2_difficultydependentpete"] = true,
         ["j_rosemod2_drakeclasscarrier"] = true,
         ["j_rosemod2_elgatobalatro"] = true,
         ["j_rosemod2_extrudejoker"] = true,
+        ["j_rosemod2_factorfictionchalkboard"] = true,
         ["j_rosemod2_farragutclassbattlecruiser"] = true,
         ["j_rosemod2_fatasstetoplush"] = true,
+        ["j_rosemod2_fatralph"] = true,
+        ["j_rosemod2_forzarewind"] = true,
         ["j_rosemod2_fujoker"] = true,
         ["j_rosemod2_gummyshark"] = true,
         ["j_rosemod2_hearthianjoker"] = true,
@@ -191,12 +221,14 @@ SMODS.ObjectType({
         ["j_rosemod2_joakerofpuredark"] = true,
         ["j_rosemod2_jokaro"] = true,
         ["j_rosemod2_lakoncockpit"] = true,
+        ["j_rosemod2_lucyjoker"] = true,
         ["j_rosemod2_magichat"] = true,
         ["j_rosemod2_majesticclassinterdictor"] = true,
         ["j_rosemod2_mementomori"] = true,
         ["j_rosemod2_moddedcopyofterraria"] = true,
         ["j_rosemod2_mrgreen"] = true,
         ["j_rosemod2_mustang"] = true,
+        ["j_rosemod2_orboffworldresourcebase"] = true,
         ["j_rosemod2_photograph"] = true,
         ["j_rosemod2_rbalatro"] = true,
         ["j_rosemod2_somnihouse"] = true,
@@ -220,7 +252,12 @@ SMODS.ObjectType({
     key = "rosemod2_injoker",
     cards = {
         ["j_rosemod2_aigeneratedcakerecipe"] = true,
+        ["j_rosemod2_club27"] = true,
+        ["j_rosemod2_difficultydependentpete"] = true,
+        ["j_rosemod2_factorfictionchalkboard"] = true,
         ["j_rosemod2_imperialcutter"] = true,
+        ["j_rosemod2_lucyjoker"] = true,
+        ["j_rosemod2_orboffworldresourcebase"] = true,
         ["j_rosemod2_somnihouse"] = true,
         ["j_rosemod2_thecrazies1973"] = true
     },
@@ -229,7 +266,9 @@ SMODS.ObjectType({
 SMODS.ObjectType({
     key = "rosemod2_rosemod2_legendary",
     cards = {
+        ["j_rosemod2_aksis"] = true,
         ["j_rosemod2_anttenna"] = true,
+        ["j_rosemod2_atheon"] = true,
         ["j_rosemod2_furinadefontaine"] = true,
         ["j_rosemod2_garymccready"] = true,
         ["j_rosemod2_grendel"] = true,
@@ -237,11 +276,22 @@ SMODS.ObjectType({
         ["j_rosemod2_knight"] = true,
         ["j_rosemod2_lotus"] = true,
         ["j_rosemod2_mirage"] = true,
+        ["j_rosemod2_oryx"] = true,
         ["j_rosemod2_ralsei"] = true,
+        ["j_rosemod2_rosemarymary"] = true,
         ["j_rosemod2_sorren"] = true,
         ["j_rosemod2_soul"] = true,
         ["j_rosemod2_susie"] = true,
         ["j_rosemod2_valkyr"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "rosemod2_raidboss",
+    cards = {
+        ["j_rosemod2_aksis"] = true,
+        ["j_rosemod2_atheon"] = true,
+        ["j_rosemod2_oryx"] = true
     },
 })
 
