@@ -1,21 +1,23 @@
-SMODS.Joker{ --A Suggestion
-    key = "asuggestion",
+SMODS.Joker{ --Two of Bounies
+    key = "lucyjoker",
     config = {
         extra = {
+            xm = 2.5
         }
     },
     loc_txt = {
-        ['name'] = 'A Suggestion',
+        ['name'] = 'Two of Bounies',
         ['text'] = {
-            [1] = 'Scored {C:attention}Jacks {}and {C:attention}Kings {}become {C:attention}Queens{}'
+            [1] = 'First played {C:attention}2{} of {C:hearts}Hearts {}gives',
+            [2] = '{X:mult,C:white}X#1#{} Mult when scored'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 1,
-        y = 1
+        x = 5,
+        y = 5
     },
     display_size = {
         w = 71 * 1, 
@@ -29,15 +31,19 @@ SMODS.Joker{ --A Suggestion
     unlocked = true,
     discovered = false,
     atlas = 'CustomJokers',
-    pools = { ["rosemod2_rosemod2_jokers"] = true },
+    pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_injoker"] = true },
+
+    loc_vars = function(self, info_queue, card)
+        
+        return {vars = {card.ability.extra.xm}}
+    end,
 
     
     calculate = function(self, card, context)
         if context.individual and context.cardarea == G.play  then
-            if (context.other_card:get_id() == 13 or context.other_card:get_id() == 11) then
-                assert(SMODS.change_base(context.other_card, nil, "Queen"))
+            if (context.other_card:get_id() == 2 and context.other_card:is_suit("Hearts")) then
                 return {
-                    message = "I have a suggestion"
+                    Xmult = card.ability.extra.xm
                 }
             end
         end

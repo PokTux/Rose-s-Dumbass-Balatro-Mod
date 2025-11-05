@@ -19,8 +19,8 @@ SMODS.Joker{ --Sorren
         }
     },
     pos = {
-        x = 8,
-        y = 5
+        x = 6,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -32,12 +32,12 @@ SMODS.Joker{ --Sorren
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 9,
-        y = 5
+        x = 7,
+        y = 6
     },
     in_pool = function(self, args)
           return (

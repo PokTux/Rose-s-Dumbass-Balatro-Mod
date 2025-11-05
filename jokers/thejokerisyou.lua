@@ -1,4 +1,4 @@
-SMODS.Joker{ --The Joker Is You!
+SMODS.Joker{ --The Joker is You!
     key = "thejokerisyou",
     config = {
         extra = {
@@ -6,7 +6,7 @@ SMODS.Joker{ --The Joker Is You!
         }
     },
     loc_txt = {
-        ['name'] = 'The Joker Is You!',
+        ['name'] = 'The Joker is You!',
         ['text'] = {
             [1] = 'After {C:attention}9{} cards have been scored',
             [2] = 'sell this Joker to create an',
@@ -31,7 +31,7 @@ SMODS.Joker{ --The Joker Is You!
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_rosemod2_toby"] = true },
     soul_pos = {

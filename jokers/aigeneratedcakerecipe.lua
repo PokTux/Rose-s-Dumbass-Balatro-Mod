@@ -37,7 +37,7 @@ SMODS.Joker{ --AI Generated Cake Recipe
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_injoker"] = true },
 

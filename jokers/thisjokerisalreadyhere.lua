@@ -1,4 +1,4 @@
-SMODS.Joker{ --This Joker Is Already Here
+SMODS.Joker{ --This Joker is Already Here
     key = "thisjokerisalreadyhere",
     config = {
         extra = {
@@ -9,7 +9,7 @@ SMODS.Joker{ --This Joker Is Already Here
         }
     },
     loc_txt = {
-        ['name'] = 'This Joker Is Already Here',
+        ['name'] = 'This Joker is Already Here',
         ['text'] = {
             [1] = '{C:inactive}That\'s a strange question to ask someone who{}',
             [2] = '{C:inactive}is omniscient and therefore knows outcomes with{}',
@@ -37,7 +37,7 @@ SMODS.Joker{ --This Joker Is Already Here
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_rosemod2_toby"] = true },
 

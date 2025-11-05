@@ -8,7 +8,8 @@ SMODS.Joker{ --Video
     loc_txt = {
         ['name'] = 'Video',
         ['text'] = {
-            [1] = 'First played {C:orange}numbered{} card gives {X:mult,C:white}X#1#{} Mult when scored'
+            [1] = 'First played {C:orange}numbered{} card',
+            [2] = 'gives {X:mult,C:white}X#1#{} Mult when scored'
         },
         ['unlock'] = {
             [1] = ''
@@ -28,7 +29,7 @@ SMODS.Joker{ --Video
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 

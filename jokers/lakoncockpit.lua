@@ -3,7 +3,9 @@ SMODS.Joker{ --Lakon Cockpit
     config = {
         extra = {
             xc = 2,
-            mny = 4
+            mny = 4,
+            set_probability = 1,
+            both = 0
         }
     },
     loc_txt = {
@@ -30,7 +32,7 @@ SMODS.Joker{ --Lakon Cockpit
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
@@ -47,25 +49,27 @@ SMODS.Joker{ --Lakon Cockpit
 
     
     calculate = function(self, card, context)
-        if context.destroy_card and context.destroy_card.should_destroy  then
-            return { remove = true }
-        end
         if context.individual and context.cardarea == G.play  then
-            context.other_card.should_destroy = false
             if SMODS.get_enhancements(context.other_card)["m_glass"] == true then
-                context.other_card.should_destroy = true
                 return {
                     x_chips = card.ability.extra.xc,
                     extra = {
                     dollars = card.ability.extra.mny,
-                    colour = G.C.MONEY,
-                    extra = {
-                    message = "Destroyed!",
-                    colour = G.C.RED
+                    colour = G.C.MONEY
                 }
             }
+        end
+    end
+    if context.fix_probability  then
+        local numerator, denominator = context.numerator, context.denominator
+        if context.identifier == "glass" then
+            numerator = card.ability.extra.set_probability
+            denominator = card.ability.extra.set_probability
+        end
+        return {
+            numerator = numerator, 
+            denominator = denominator
         }
     end
-end
 end
 }

@@ -35,7 +35,7 @@ SMODS.Joker{ --Crimson Interface
     eternal_compat = false,
     perishable_compat = false,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosesmod2_jokers"] = true },
 

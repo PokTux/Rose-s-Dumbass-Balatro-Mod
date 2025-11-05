@@ -19,8 +19,8 @@ SMODS.Joker{ --Susie
         }
     },
     pos = {
-        x = 6,
-        y = 6
+        x = 4,
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
@@ -32,12 +32,12 @@ SMODS.Joker{ --Susie
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 7,
-        y = 6
+        x = 5,
+        y = 7
     },
     in_pool = function(self, args)
           return (

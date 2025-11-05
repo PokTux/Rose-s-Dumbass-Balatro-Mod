@@ -12,7 +12,7 @@ SMODS.Joker{ --Token
         ['text'] = {
             [1] = '{X:mult,C:white}X#1#{} Mult',
             [2] = '{C:green}#3# in #4# {}chance to create {C:attention}10{}',
-            [3] = 'useless {C:dark_edition}Negative {}Gummy Sharks',
+            [3] = '{C:dark_edition}Negative {}Gummy Sharks',
             [4] = 'when {C:attention}Blind {}is selected'
         },
         ['unlock'] = {
@@ -33,7 +33,7 @@ SMODS.Joker{ --Token
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
@@ -44,6 +44,12 @@ SMODS.Joker{ --Token
             info_queue[#info_queue + 1] = info_queue_0
         else
             error("JOKERFORGE: Invalid key in infoQueues. \"e_negative\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
+        local info_queue_1 = G.P_CENTERS["j_rosemod2_gummyshark"]
+        if info_queue_1 then
+            info_queue[#info_queue + 1] = info_queue_1
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"j_rosemod2_gummyshark\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
         end
         local new_numerator, new_denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'j_rosemod2_token') 
         return {vars = {card.ability.extra.xm, card.ability.extra.ignore, new_numerator, new_denominator}}

@@ -22,8 +22,8 @@ SMODS.Joker{ --Ralsei
         }
     },
     pos = {
-        x = 2,
-        y = 7
+        x = 0,
+        y = 8
     },
     display_size = {
         w = 71 * 1, 
@@ -35,12 +35,12 @@ SMODS.Joker{ --Ralsei
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 3,
-        y = 7
+        x = 1,
+        y = 8
     },
     in_pool = function(self, args)
           return (

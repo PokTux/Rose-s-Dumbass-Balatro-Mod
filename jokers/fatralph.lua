@@ -1,15 +1,15 @@
-SMODS.Joker{ --Fatass Teto Plush
-    key = "fatasstetoplush",
+SMODS.Joker{ --Fat Ralph
+    key = "fatralph",
     config = {
         extra = {
-            xm = 3.5,
+            ch = 3.5,
             sl = 1
         }
     },
     loc_txt = {
-        ['name'] = 'Fatass Teto Plush',
+        ['name'] = 'Fat Ralph',
         ['text'] = {
-            [1] = '{X:mult,C:white}X#1#{} Mult',
+            [1] = '{X:chips,C:white}X#1#{} Chips',
             [2] = '{C:dark_edition}-#2#{} Joker Slot'
         },
         ['unlock'] = {
@@ -17,8 +17,8 @@ SMODS.Joker{ --Fatass Teto Plush
         }
     },
     pos = {
-        x = 8,
-        y = 1
+        x = 6,
+        y = 5
     },
     display_size = {
         w = 71 * 1.69, 
@@ -36,14 +36,14 @@ SMODS.Joker{ --Fatass Teto Plush
 
     loc_vars = function(self, info_queue, card)
         
-        return {vars = {card.ability.extra.xm, card.ability.extra.sl}}
+        return {vars = {card.ability.extra.ch, card.ability.extra.sl}}
     end,
 
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-                Xmult = card.ability.extra.xm
+                x_chips = card.ability.extra.ch
             }
         end
     end,

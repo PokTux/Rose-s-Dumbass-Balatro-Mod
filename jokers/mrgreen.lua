@@ -13,7 +13,7 @@ SMODS.Joker{ --Mr. Green
         ['name'] = 'Mr. Green',
         ['text'] = {
             [1] = 'Earn {C:money}$7{} at end of round',
-            [2] = '{C:green}#4# in #5#{} chance to set money to',
+            [2] = '{C:green}#3# in #4#{} chance to set money to',
             [3] = '{C:money}$0{} and {C:red}self destruct{} at end of round',
             [4] = '{C:white}.{}',
             [5] = '{C:inactive}Art from{} {C:green}Mr. Green\'s Big Break{} {C:inactive}thumbnail{}'
@@ -36,7 +36,7 @@ SMODS.Joker{ --Mr. Green
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 

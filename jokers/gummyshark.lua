@@ -28,7 +28,7 @@ SMODS.Joker{ --Gummy Shark
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
     in_pool = function(self, args)

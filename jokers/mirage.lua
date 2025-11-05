@@ -9,7 +9,7 @@ SMODS.Joker{ --Mirage
         ['name'] = 'Mirage',
         ['text'] = {
             [1] = 'Retrigger each scored card',
-            [2] = '{C:attention}four {}additional times if',
+            [2] = '{C:attention}4 {}additional times if',
             [3] = 'played {C:attention}poker hand{} has',
             [4] = 'already been played this round'
         },
@@ -18,8 +18,8 @@ SMODS.Joker{ --Mirage
         }
     },
     pos = {
-        x = 4,
-        y = 5
+        x = 2,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -31,12 +31,12 @@ SMODS.Joker{ --Mirage
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 5,
-        y = 5
+        x = 3,
+        y = 6
     },
     in_pool = function(self, args)
           return (

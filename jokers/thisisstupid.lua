@@ -1,4 +1,4 @@
-SMODS.Joker{ --This Is Stupid
+SMODS.Joker{ --This is Stupid
     key = "thisisstupid",
     config = {
         extra = {
@@ -8,7 +8,7 @@ SMODS.Joker{ --This Is Stupid
         }
     },
     loc_txt = {
-        ['name'] = 'This Is Stupid',
+        ['name'] = 'This is Stupid',
         ['text'] = {
             [1] = 'This joker is a direct reference to a semi-obscure piece of',
             [2] = 'media that I love! Firstly, it gives {C:red}+2{} Mult and',
@@ -66,7 +66,7 @@ SMODS.Joker{ --This Is Stupid
     eternal_compat = false,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 

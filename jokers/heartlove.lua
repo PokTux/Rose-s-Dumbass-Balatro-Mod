@@ -31,7 +31,7 @@ SMODS.Joker{ --Matespritship
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true, ["rosemod2_tlove"] = true, ["rosemod2_rosemod2_toby"] = true },
 
@@ -57,7 +57,7 @@ SMODS.Joker{ --Matespritship
                             center = 
                             G.P_CENTERS.c_base
                         }, G.discard, true, false, nil, true)
-                        new_card:set_seal(pseudorandom_element({'Gold','Red','Blue','Purple','rosemod2_hatseal'}, pseudoseed('add_card_hand_seal')), true)
+                        new_card:set_seal(pseudorandom_element({'Gold','Red','Blue','Purple','rosemod2_hatseal','rosemod2_normalicon'}, pseudoseed('add_card_hand_seal')), true)
                         new_card:set_edition(pseudorandom_element({'e_foil','e_holo','e_polychrome','e_negative'}, pseudoseed('add_card_hand_edition')), true)
                         
                         G.playing_card = (G.playing_card and G.playing_card + 1) or 1

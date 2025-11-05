@@ -21,7 +21,7 @@ SMODS.Joker{ --Gary McCready
         }
     },
     pos = {
-        x = 0,
+        x = 8,
         y = 5
     },
     display_size = {
@@ -34,11 +34,11 @@ SMODS.Joker{ --Gary McCready
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 1,
+        x = 9,
         y = 5
     },
     in_pool = function(self, args)

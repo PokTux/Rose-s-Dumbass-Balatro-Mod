@@ -1,4 +1,4 @@
-SMODS.Joker{ --Knight
+SMODS.Joker{ --Roaring Knight
     key = "knight",
     config = {
         extra = {
@@ -9,7 +9,7 @@ SMODS.Joker{ --Knight
         }
     },
     loc_txt = {
-        ['name'] = 'Knight',
+        ['name'] = 'Roaring Knight',
         ['text'] = {
             [1] = 'Create a random {C:attention}Perishable {}{C:dark_edition}Negative {}{C:legendary}Legendary{} Joker',
             [2] = 'Once the new Joker perishes create another',
@@ -21,8 +21,8 @@ SMODS.Joker{ --Knight
         }
     },
     pos = {
-        x = 8,
-        y = 6
+        x = 6,
+        y = 7
     },
     display_size = {
         w = 71 * 1, 
@@ -34,12 +34,12 @@ SMODS.Joker{ --Knight
     eternal_compat = true,
     perishable_compat = true,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 9,
-        y = 6
+        x = 7,
+        y = 7
     },
     in_pool = function(self, args)
           return (
