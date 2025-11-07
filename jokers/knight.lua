@@ -4,8 +4,7 @@ SMODS.Joker{ --Roaring Knight
         extra = {
             perish = 0,
             perishable = 0,
-            ignore = 0,
-            rosemod2_tensionhorn = 0
+            ignore = 0
         }
     },
     loc_txt = {
@@ -102,15 +101,7 @@ SMODS.Joker{ --Roaring Knight
                         colour = G.C.BLUE
                     }
                 }
-            else
-                G.E_MANAGER:add_event(Event({
-                func = function()
-                    play_sound("rosemod2_tensionhorn")
-                        SMODS.calculate_effect({message = "!"}, card)
-                        return true
-                        end,
-                    }))
-                end
             end
         end
+    end
 }
