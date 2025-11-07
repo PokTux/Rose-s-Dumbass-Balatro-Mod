@@ -68,7 +68,7 @@ local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 
-local jokerIndexList = {74,7,59,30,11,14,40,18,52,71,45,5,38,43,67,17,37,56,21,48,1,54,13,34,31,9,68,73,33,24,32,69,63,49,4,47,8,70,28,66,64,16,36,65,60,20,44,29,62,19,12,23,10,50,42,22,15,26,25,46,35,57,72,27,41,61,39,58,53,3,6,51,2,55}
+local jokerIndexList = {77,7,62,32,12,16,42,20,55,74,47,5,40,45,70,19,39,59,23,50,1,57,14,36,33,10,71,76,35,26,34,72,66,51,4,49,9,73,30,69,67,18,38,68,63,22,46,31,52,65,21,13,25,11,53,44,24,17,8,15,28,27,48,37,60,75,29,43,64,41,61,56,3,6,54,2,58}
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -83,7 +83,7 @@ local function load_jokers_folder()
 end
 
 
-local consumableIndexList = {6,1,10,4,9,2,3,8,11,5,7}
+local consumableIndexList = {10,1,14,4,13,2,3,12,15,8,11,9,7,6,5}
 
 local function load_consumables_folder()
     local mod_path = SMODS.current_mod.path
@@ -193,12 +193,14 @@ SMODS.ObjectType({
         ["j_rosemod2_aigeneratedcakerecipe"] = true,
         ["j_rosemod2_arachnidjoker"] = true,
         ["j_rosemod2_asuggestion"] = true,
+        ["j_rosemod2_bemorelikevriska"] = true,
         ["j_rosemod2_carpet"] = true,
         ["j_rosemod2_clownmaskedculprits"] = true,
         ["j_rosemod2_club27"] = true,
         ["j_rosemod2_clublove"] = true,
         ["j_rosemod2_crimson1"] = true,
         ["j_rosemod2_deltarunetomorrow"] = true,
+        ["j_rosemod2_detailedsurfacescanner"] = true,
         ["j_rosemod2_diamondlove"] = true,
         ["j_rosemod2_difficultydependentpete"] = true,
         ["j_rosemod2_drakeclasscarrier"] = true,
@@ -228,6 +230,7 @@ SMODS.ObjectType({
         ["j_rosemod2_moddedcopyofterraria"] = true,
         ["j_rosemod2_mrgreen"] = true,
         ["j_rosemod2_mustang"] = true,
+        ["j_rosemod2_nomaijoker"] = true,
         ["j_rosemod2_orboffworldresourcebase"] = true,
         ["j_rosemod2_photograph"] = true,
         ["j_rosemod2_rbalatro"] = true,
@@ -252,6 +255,7 @@ SMODS.ObjectType({
     key = "rosemod2_injoker",
     cards = {
         ["j_rosemod2_aigeneratedcakerecipe"] = true,
+        ["j_rosemod2_bemorelikevriska"] = true,
         ["j_rosemod2_club27"] = true,
         ["j_rosemod2_difficultydependentpete"] = true,
         ["j_rosemod2_factorfictionchalkboard"] = true,
@@ -351,5 +355,12 @@ SMODS.ObjectType({
         ["j_rosemod2_mirage"] = true,
         ["j_rosemod2_sorren"] = true,
         ["j_rosemod2_valkyr"] = true
+    },
+})
+
+SMODS.ObjectType({
+    key = "rosemod2_c_black_hole",
+    cards = {
+        ["j_rosemod2_nomaijoker"] = true
     },
 })

@@ -16,7 +16,7 @@ SMODS.Seal {
     },
     atlas = 'CustomSeals',
     unlocked = true,
-    discovered = true,
+    discovered = false,
     no_collection = false,
     calculate = function(self, card, context)
         if context.main_scoring and context.cardarea == G.play then

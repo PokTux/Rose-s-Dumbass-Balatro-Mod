@@ -11,7 +11,6 @@ SMODS.Booster {
     atlas = "CustomBoosters",
     pos = { x = 0, y = 0 },
     group_key = "rosemod2_boosters",
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -48,7 +47,6 @@ SMODS.Booster {
     atlas = "CustomBoosters",
     pos = { x = 1, y = 0 },
     group_key = "rosemod2_boosters",
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -85,7 +83,6 @@ SMODS.Booster {
     atlas = "CustomBoosters",
     pos = { x = 2, y = 0 },
     group_key = "rosemod2_boosters",
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -123,7 +120,6 @@ SMODS.Booster {
     atlas = "CustomBoosters",
     pos = { x = 3, y = 0 },
     group_key = "rosemod2_boosters",
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -161,7 +157,6 @@ SMODS.Booster {
     pos = { x = 4, y = 0 },
     group_key = "rosemod2_boosters",
     select_card = "consumeables",
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
@@ -212,7 +207,6 @@ SMODS.Booster {
     pos = { x = 5, y = 0 },
     group_key = "rosemod2_boosters",
     draw_hand = true,
-    discovered = true,
     loc_vars = function(self, info_queue, card)
         local cfg = (card and card.ability) or self.config
         return {
