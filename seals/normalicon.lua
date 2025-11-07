@@ -3,7 +3,7 @@ SMODS.Seal {
     pos = { x = 1, y = 0 },
     config = {
         extra = {
-            x_chips = 1.25
+            x_mult = 1.25
         }
     },
     badge_colour = HEX('31bf31'),
@@ -27,7 +27,7 @@ SMODS.Seal {
     return true
     end,
 }))
-            SMODS.calculate_effect({x_chips = card.ability.seal.extra.x_chips}, card)
+            SMODS.calculate_effect({x_mult = card.ability.seal.extra.x_mult}, card)
         end
     end
 }
