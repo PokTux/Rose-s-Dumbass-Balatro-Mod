@@ -15,7 +15,9 @@ SMODS.Consumable {
     cost = 4,
     unlocked = true,
     discovered = false,
-    hidden = false,
+    hidden = true,
+    soul_set = "Tarot",
+    soul_rate = 0.003,
     can_repeat_soul = false,
     atlas = 'CustomConsumables',
     soul_pos = {
