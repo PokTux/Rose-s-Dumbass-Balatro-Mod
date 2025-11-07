@@ -24,7 +24,7 @@ SMODS.Joker{ --Rosemary Mary
         }
     },
     pos = {
-        x = 0,
+        x = 3,
         y = 9
     },
     display_size = {
@@ -41,7 +41,7 @@ SMODS.Joker{ --Rosemary Mary
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 1,
+        x = 4,
         y = 9
     },
     in_pool = function(self, args)

@@ -19,7 +19,7 @@ SMODS.Joker{ --Forza Rewind
         }
     },
     pos = {
-        x = 2,
+        x = 3,
         y = 5
     },
     display_size = {

@@ -21,7 +21,7 @@ SMODS.Joker{ --Roaring Knight
         }
     },
     pos = {
-        x = 6,
+        x = 9,
         y = 7
     },
     display_size = {
@@ -38,8 +38,8 @@ SMODS.Joker{ --Roaring Knight
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 7,
-        y = 7
+        x = 0,
+        y = 8
     },
     in_pool = function(self, args)
           return (

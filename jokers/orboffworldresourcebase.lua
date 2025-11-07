@@ -21,7 +21,7 @@ SMODS.Joker{ --O.R.B: Off-World Resource Base
         }
     },
     pos = {
-        x = 4,
+        x = 5,
         y = 5
     },
     display_size = {

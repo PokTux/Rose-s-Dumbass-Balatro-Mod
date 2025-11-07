@@ -2,10 +2,10 @@ SMODS.Joker{ --This Joker Can Do Anything!
     key = "thisjokercandoanything",
     config = {
         extra = {
-            c = 40,
+            c = 30,
             m = 10,
-            x = 1.5,
-            s = 2,
+            x = 1.25,
+            s = 1,
             h = 1,
             rosemod2_jevil = 0
         }

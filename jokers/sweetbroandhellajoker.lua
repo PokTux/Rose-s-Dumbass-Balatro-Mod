@@ -25,8 +25,8 @@ SMODS.Joker{ --Sweet Bro And Hella Joker
         }
     },
     pos = {
-        x = 9,
-        y = 4
+        x = 0,
+        y = 5
     },
     display_size = {
         w = 71 * 1, 

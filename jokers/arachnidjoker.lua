@@ -25,8 +25,8 @@ SMODS.Joker{ --Arachnid Joker
         w = 71 * 1, 
         h = 95 * 1
     },
-    cost = 4,
-    rarity = 1,
+    cost = 8,
+    rarity = 2,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,

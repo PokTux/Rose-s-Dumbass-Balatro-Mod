@@ -1,21 +1,24 @@
-SMODS.Joker{ --A Suggestion
-    key = "asuggestion",
+SMODS.Joker{ --Detailed Surface Scanner
+    key = "detailedsurfacescanner",
     config = {
         extra = {
+            dollars = 2
         }
     },
     loc_txt = {
-        ['name'] = 'A Suggestion',
+        ['name'] = 'Detailed Surface Scanner',
         ['text'] = {
-            [1] = 'Scored {C:attention}Jacks {}and {C:attention}Kings {}become {C:attention}Queens{}'
+            [1] = 'Earn {C:money}$2{} when a',
+            [2] = '{C:planet}Planet {}card is',
+            [3] = 'used'
         },
         ['unlock'] = {
             [1] = 'Unlocked by default.'
         }
     },
     pos = {
-        x = 1,
-        y = 1
+        x = 0,
+        y = 6
     },
     display_size = {
         w = 71 * 1, 
@@ -33,11 +36,10 @@ SMODS.Joker{ --A Suggestion
 
     
     calculate = function(self, card, context)
-        if context.individual and context.cardarea == G.play  then
-            if (context.other_card:get_id() == 13 or context.other_card:get_id() == 11) then
-                assert(SMODS.change_base(context.other_card, nil, "Queen"))
+        if context.using_consumeable  then
+            if context.consumeable and context.consumeable.ability.set == 'Planet' then
                 return {
-                    message = "I have a suggestion"
+                    dollars = card.ability.extra.dollars
                 }
             end
         end

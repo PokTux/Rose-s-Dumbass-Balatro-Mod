@@ -35,6 +35,17 @@ SMODS.Joker{ --Majestic-Class Interdictor
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_jokers"] = true },
 
+    loc_vars = function(self, info_queue, card)
+        
+        local info_queue_0 = G.P_CENTERS["c_rosemod2_gu97"]
+        if info_queue_0 then
+            info_queue[#info_queue + 1] = info_queue_0
+        else
+            error("JOKERFORGE: Invalid key in infoQueues. \"c_rosemod2_gu97\" isn't a valid Object key, Did you misspell it or forgot a modprefix?")
+        end
+        return {vars = {}}
+    end,
+
     
     calculate = function(self, card, context)
     if context.end_of_round and context.game_over == false and context.main_eval  then

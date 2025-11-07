@@ -30,8 +30,8 @@ SMODS.Joker{ --Aksis
         }
     },
     pos = {
-        x = 8,
-        y = 8
+        x = 1,
+        y = 9
     },
     display_size = {
         w = 71 * 1, 
@@ -47,8 +47,8 @@ SMODS.Joker{ --Aksis
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_raidboss"] = true },
     soul_pos = {
-        x = 9,
-        y = 8
+        x = 2,
+        y = 9
     },
     in_pool = function(self, args)
           return (

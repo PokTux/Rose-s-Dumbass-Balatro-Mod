@@ -25,7 +25,7 @@ SMODS.Joker{ --Atheon
         }
     },
     pos = {
-        x = 4,
+        x = 7,
         y = 8
     },
     display_size = {
@@ -42,7 +42,7 @@ SMODS.Joker{ --Atheon
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_raidboss"] = true },
     soul_pos = {
-        x = 5,
+        x = 8,
         y = 8
     },
     in_pool = function(self, args)

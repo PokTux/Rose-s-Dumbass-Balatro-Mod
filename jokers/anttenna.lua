@@ -21,7 +21,7 @@ SMODS.Joker{ --Ant Tenna
         }
     },
     pos = {
-        x = 2,
+        x = 5,
         y = 8
     },
     display_size = {
@@ -38,7 +38,7 @@ SMODS.Joker{ --Ant Tenna
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 3,
+        x = 6,
         y = 8
     },
     in_pool = function(self, args)

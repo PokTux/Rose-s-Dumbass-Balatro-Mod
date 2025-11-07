@@ -19,7 +19,7 @@ SMODS.Joker{ --Fact Or Fiction Chalkboard
         }
     },
     pos = {
-        x = 0,
+        x = 1,
         y = 5
     },
     display_size = {

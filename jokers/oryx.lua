@@ -27,7 +27,7 @@ SMODS.Joker{ --Oryx
         }
     },
     pos = {
-        x = 6,
+        x = 9,
         y = 8
     },
     display_size = {
@@ -44,8 +44,8 @@ SMODS.Joker{ --Oryx
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_raidboss"] = true },
     soul_pos = {
-        x = 7,
-        y = 8
+        x = 0,
+        y = 9
     },
     in_pool = function(self, args)
           return (

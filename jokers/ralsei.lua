@@ -22,7 +22,7 @@ SMODS.Joker{ --Ralsei
         }
     },
     pos = {
-        x = 0,
+        x = 3,
         y = 8
     },
     display_size = {
@@ -39,7 +39,7 @@ SMODS.Joker{ --Ralsei
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_fungang"] = true },
     soul_pos = {
-        x = 1,
+        x = 4,
         y = 8
     },
     in_pool = function(self, args)

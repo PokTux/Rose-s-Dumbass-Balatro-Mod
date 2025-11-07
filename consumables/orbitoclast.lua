@@ -23,7 +23,7 @@ SMODS.Consumable {
 
     cost = 3,
     unlocked = true,
-    discovered = true,
+    discovered = false,
     hidden = false,
     can_repeat_soul = false,
     atlas = 'CustomConsumables',use = function(self, card, area, copier)

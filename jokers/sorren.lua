@@ -19,7 +19,7 @@ SMODS.Joker{ --Sorren
         }
     },
     pos = {
-        x = 6,
+        x = 9,
         y = 6
     },
     display_size = {
@@ -36,8 +36,8 @@ SMODS.Joker{ --Sorren
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 7,
-        y = 6
+        x = 0,
+        y = 7
     },
     in_pool = function(self, args)
           return (

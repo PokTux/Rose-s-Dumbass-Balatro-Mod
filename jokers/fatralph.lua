@@ -17,7 +17,7 @@ SMODS.Joker{ --Fat Ralph
         }
     },
     pos = {
-        x = 6,
+        x = 7,
         y = 5
     },
     display_size = {

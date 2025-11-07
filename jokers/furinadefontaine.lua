@@ -19,7 +19,7 @@ SMODS.Joker{ --Furina de Fontaine
         }
     },
     pos = {
-        x = 0,
+        x = 3,
         y = 6
     },
     display_size = {
@@ -36,7 +36,7 @@ SMODS.Joker{ --Furina de Fontaine
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true },
     soul_pos = {
-        x = 1,
+        x = 4,
         y = 6
     },
     in_pool = function(self, args)

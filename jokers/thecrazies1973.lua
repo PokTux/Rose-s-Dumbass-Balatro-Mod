@@ -8,7 +8,7 @@ SMODS.Joker{ --The Crazies (1973)
     loc_txt = {
         ['name'] = 'The Crazies (1973)',
         ['text'] = {
-            [1] = 'Gives {X:mult,C:white}X0.75{} Mult per hands',
+            [1] = 'Gives {X:mult,C:white}X0.5{} Mult per hands',
             [2] = 'remaining',
             [3] = '{C:inactive}(Currently {}{X:mult,C:white}X#1#{} {C:inactive}Mult){}'
         },
@@ -36,14 +36,14 @@ SMODS.Joker{ --The Crazies (1973)
 
     loc_vars = function(self, info_queue, card)
         
-        return {vars = {card.ability.extra.handsremaining + ((G.GAME.current_round.hands_left or 0)) * 0.75}}
+        return {vars = {card.ability.extra.handsremaining + ((G.GAME.current_round.hands_left or 0)) * 0.5}}
     end,
 
     
     calculate = function(self, card, context)
         if context.cardarea == G.jokers and context.joker_main  then
             return {
-                Xmult = card.ability.extra.handsremaining + (G.GAME.current_round.hands_left) * 0.75
+                Xmult = card.ability.extra.handsremaining + (G.GAME.current_round.hands_left) * 0.5
             }
         end
     end

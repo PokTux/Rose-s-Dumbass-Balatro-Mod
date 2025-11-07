@@ -20,7 +20,7 @@ SMODS.Joker{ --Grendel
         }
     },
     pos = {
-        x = 0,
+        x = 3,
         y = 7
     },
     display_size = {
@@ -37,7 +37,7 @@ SMODS.Joker{ --Grendel
     atlas = 'CustomJokers',
     pools = { ["rosemod2_rosemod2_legendary"] = true, ["rosemod2_rosemod2_frame"] = true },
     soul_pos = {
-        x = 1,
+        x = 4,
         y = 7
     },
     in_pool = function(self, args)
