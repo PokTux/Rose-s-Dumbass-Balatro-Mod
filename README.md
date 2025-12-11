@@ -1,5 +1,5 @@
 # Rose-s-Dumbass-Balatro-Mod
-A bad Balatro mod with over ~~40~~ ~~60~~ 80 additions and full of unfunny memes and unfunny reference humour, as well as self indulgent inside jokes that will make sense to literally only like 5 people
+A bad Balatro mod with over ~~40~~ ~~60~~ ~~80~~ 100 additions and full of unfunny memes and unfunny reference humour, as well as self indulgent inside jokes that will make sense to literally only like 5 people
 
 Originally I made a mod with like, 10 jokers, got bored of coding, stopped working on it, and never uploaded it. But JokerForge is a thing now so enjoy these low quality and ~~probably unbalanced~~ sort of a little bit balanced but still kind of unbalanced maybe Jokers that are mostly injokes, shitty memes, or references to random media I like. 
 
