@@ -68,7 +68,7 @@ local NFS = require("nativefs")
 to_big = to_big or function(a) return a end
 lenient_bignum = lenient_bignum or function(a) return a end
 
-local jokerIndexList = {77,7,62,32,12,16,42,20,55,74,47,5,40,45,70,19,39,59,23,50,1,57,14,36,33,10,71,76,35,26,34,72,66,51,4,49,9,73,30,69,67,18,38,68,63,22,46,31,52,65,21,13,25,11,53,44,24,17,8,15,28,27,48,37,60,75,29,43,64,41,61,56,3,6,54,2,58}
+local jokerIndexList = {83,7,68,36,12,17,47,23,61,80,53,5,44,51,76,22,43,65,26,56,1,63,15,40,37,10,77,82,39,29,38,78,72,57,4,55,9,79,33,75,73,20,42,74,69,25,52,35,58,71,24,13,28,11,59,50,27,18,8,16,34,14,21,45,19,48,31,30,54,41,66,81,32,49,70,46,67,62,3,6,60,2,64}
 
 local function load_jokers_folder()
     local mod_path = SMODS.current_mod.path
@@ -83,7 +83,7 @@ local function load_jokers_folder()
 end
 
 
-local consumableIndexList = {10,1,14,4,13,2,3,12,15,8,11,9,7,6,5}
+local consumableIndexList = {11,1,15,4,14,2,3,13,16,9,12,10,8,7,6,5}
 
 local function load_consumables_folder()
     local mod_path = SMODS.current_mod.path
@@ -139,7 +139,7 @@ local function load_seals_folder()
 end
 
 
-local deckIndexList = {5,4,3,2,1}
+local deckIndexList = {7,6,5,4,2,1,3}
 
 local function load_decks_folder()
     local mod_path = SMODS.current_mod.path
@@ -199,11 +199,14 @@ SMODS.ObjectType({
         ["j_rosemod2_club27"] = true,
         ["j_rosemod2_clublove"] = true,
         ["j_rosemod2_crimson1"] = true,
+        ["j_rosemod2_deathbedcompanion"] = true,
         ["j_rosemod2_deltarunetomorrow"] = true,
         ["j_rosemod2_detailedsurfacescanner"] = true,
         ["j_rosemod2_diamondlove"] = true,
         ["j_rosemod2_difficultydependentpete"] = true,
+        ["j_rosemod2_domesticatedjoker"] = true,
         ["j_rosemod2_drakeclasscarrier"] = true,
+        ["j_rosemod2_dualgreatshields"] = true,
         ["j_rosemod2_elgatobalatro"] = true,
         ["j_rosemod2_extrudejoker"] = true,
         ["j_rosemod2_factorfictionchalkboard"] = true,
@@ -213,6 +216,7 @@ SMODS.ObjectType({
         ["j_rosemod2_forzarewind"] = true,
         ["j_rosemod2_fujoker"] = true,
         ["j_rosemod2_gummyshark"] = true,
+        ["j_rosemod2_haveljoker"] = true,
         ["j_rosemod2_hearthianjoker"] = true,
         ["j_rosemod2_heartlove"] = true,
         ["j_rosemod2_heyundyne"] = true,
@@ -222,7 +226,9 @@ SMODS.ObjectType({
         ["j_rosemod2_javelinclasscarrier"] = true,
         ["j_rosemod2_joakerofpuredark"] = true,
         ["j_rosemod2_jokaro"] = true,
+        ["j_rosemod2_jokeroffavorandprotection"] = true,
         ["j_rosemod2_lakoncockpit"] = true,
+        ["j_rosemod2_lohacstockmarket"] = true,
         ["j_rosemod2_lucyjoker"] = true,
         ["j_rosemod2_magichat"] = true,
         ["j_rosemod2_majesticclassinterdictor"] = true,
@@ -321,6 +327,7 @@ SMODS.ObjectType({
         ["j_rosemod2_heartlove"] = true,
         ["j_rosemod2_heyundyne"] = true,
         ["j_rosemod2_joakerofpuredark"] = true,
+        ["j_rosemod2_lohacstockmarket"] = true,
         ["j_rosemod2_spadelove"] = true,
         ["j_rosemod2_temporaljoker"] = true,
         ["j_rosemod2_thejokerisyou"] = true,
@@ -358,9 +365,9 @@ SMODS.ObjectType({
     },
 })
 
-SMODS.ObjectType({
-    key = "rosemod2_c_black_hole",
-    cards = {
-        ["j_rosemod2_nomaijoker"] = true
-    },
-})
+
+SMODS.current_mod.optional_features = function()
+    return {
+        cardareas = {} 
+    }
+end
